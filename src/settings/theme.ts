@@ -13,18 +13,13 @@ export const theme: ITheme = {
   },
 
   colors: {
-    appBGColor: '#eaeeff',
-
-    primary: 'black',
-    secondary: 'white',
-    third: '#444444',
-    fourth: '#1976d2',
-    hover: '#1976d233',
-    active: '#1976d211',
-    unfocused: '#1976d211',
-
-    titleBG: '#65472e',
-    formBG: '#efefef',
+    bg: '#FEFCFF',
+    accent: '#7B61FF',
+    hight: '#FF2B77',
+    medium: '#E2A300',
+    low: '#6BD475',
+    text: '#3F3F3F',
+    divider: '#ACA7C3',
   },
 
   fonts: {
@@ -33,16 +28,20 @@ export const theme: ITheme = {
   },
 
   fontSizes: {
+    xs: '12px',
     s: '14px',
-    m: '18px',
+    m: '16px',
     l: '20px',
     xl: '26px',
     xxl: '40px',
   },
 
   fontWeights: {
-    normal: 400,
+    regular: 400,
+    medium: 500,
+    semiBold: 600,
     bold: 700,
+    extraBold: 800,
   },
 
   letterSpacings: {
@@ -51,40 +50,47 @@ export const theme: ITheme = {
     stats: '1px',
   },
 
+  lineHeights: {
+    normal: 1,
+    cardTitle: 1.5,
+    cardDate: 1.71,
+    cardLocation: 1.71,
+    cardDescription: 1.42,
+    textField: 1.5,
+    calendar: 1.33,
+  },
+
   radii: {
     none: 'none',
-    standart: '5px',
-    rounded: '20px',
+    card: '12px',
+    button: '8px',
+    category: '8px',
+    image: '8px',
+    textField: '10px',
     round: '50%',
   },
 
   shadows: {
-    standart: `0px 0px 5px #44444455`,
-    onFocus: `inset 0px -2px 2px #00000055`,
-    onHover: `inset 0 0 5px #00000055`,
+    standart: `2px 4px 9px 0px rgba(166, 141, 174, 0.28)`,
   },
 
-  space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
+  space: [0, 2, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 64, 128, 256],
 
   sizes: {
     wholeHeight: '100vh',
   },
+
   transitions: { standart: 'all 0.3s ease-in' },
 };
 
-// Моя шпаргалка
 // borders:	border, border-top, border-right, border-bottom, border-left, border-block, border-block-end, border-block-start, border-inline, border-inline-end, border-inline-start
-
 // borderStyles:	border-style, border-top-style, border-bottom-style, border-left-style, border-right-style, border-block-end-style, border-block-start-style, border-block-style, border-inline-end-style, border-inline-start-style, border-inline-style
-
 // borderWidths:	border-width, border-top-width, border-bottom-width, border-left-width, border-right-width, border-block-end-width, border-block-start-width, border-block-width, border-inline-end-width, border-inline-start-width, border-inline-width, column-rule-width
-
 // colors:	color, background, background-color, border-color, caret-color, column-rule-color, outline-color, text-decoration-color, border-top-color, border-bottom-color, border-left-color, border-right-color, border-block-color, border-block-end-color, border-block-start-color, border-inline-color, border-inline-end-color, border-inline-start-color, fill, stroke
 // fonts:	font-family
 // fontSizes:	font-size
 // fontWeights:	font-weight
 // letterSpacings:	letter-spacing
-// lineHeights:	line-height
 // opacities:	opacity
 // radii:	border-radius, border-top-right-radius, border-top-left-radius, border-bottom-right-radius, border-bottom-left-radius, border-end-end-radius, border-end-start-radius, border-start-end-radius, border-start-start-radius
 // shadows:	box-shadow, text-shadow
