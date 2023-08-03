@@ -1,12 +1,5 @@
-import { Main } from 'pages/Main';
+import { AppRouter } from 'router/Router';
 
 export const App = () => {
-  return (
-    <div>
-      <Main />
-      <header>header</header>
-      <main>main</main>
-      <footer>footer</footer>
-    </div>
-  );
+  return <AppRouter />;
 };
