@@ -1,3 +1,5 @@
+import { Container } from 'components/common/Container';
+
 export const Main = () => {
-  return <div>Main</div>;
+  return <Container>Main</Container>;
 };
