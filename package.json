@@ -1,5 +1,6 @@
 {
   "name": "event-planner",
+  "homepage": "https://1leha.github.io/event-planner",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
