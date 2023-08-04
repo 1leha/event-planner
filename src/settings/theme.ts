@@ -64,6 +64,7 @@ export const theme: ITheme = {
     none: 'none',
     card: '12px',
     button: '8px',
+    buttonSmall: '4px',
     category: '8px',
     image: '8px',
     textField: '10px',
