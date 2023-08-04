@@ -1,0 +1,1 @@
+export { HeaderStandart } from './HeaderStandart';
