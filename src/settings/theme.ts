@@ -15,6 +15,7 @@ export const theme: ITheme = {
   colors: {
     bg: '#FEFCFF',
     accent: '#7B61FF',
+    error: '#FF2B77',
     hight: '#FF2B77',
     medium: '#E2A300',
     low: '#6BD475',
@@ -47,20 +48,26 @@ export const theme: ITheme = {
 
   letterSpacings: {
     normal: 0,
-    tagline: '6.8px',
-    stats: '1px',
+    label: '0.4px',
   },
 
   lineHeights: {
-    normal: 1.4,
+    normal: 1,
+
     cardTitle: 1.5,
     cardDate: 1.71,
     cardLocation: 1.71,
     cardDescription: 1.42,
-    textField: 1.5,
+
     calendar: 1.33,
+
     smallButton: 1.33,
     middleButton: 1.42,
+    largeButton: 1.4,
+
+    textField: 1.5,
+
+    error: 1.33,
   },
 
   radii: {
@@ -70,7 +77,8 @@ export const theme: ITheme = {
     buttonSmall: '4px',
     category: '8px',
     image: '8px',
-    textField: '10px',
+    textField: '8px',
+    searchField: '10px',
     round: '50%',
   },
 
