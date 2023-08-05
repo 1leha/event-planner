@@ -20,6 +20,7 @@ export const theme: ITheme = {
     low: '#6BD475',
     text: '#3F3F3F',
     divider: '#ACA7C3',
+    white: '#FFFFFF',
   },
 
   fonts: {
@@ -51,13 +52,15 @@ export const theme: ITheme = {
   },
 
   lineHeights: {
-    normal: 1,
+    normal: 1.4,
     cardTitle: 1.5,
     cardDate: 1.71,
     cardLocation: 1.71,
     cardDescription: 1.42,
     textField: 1.5,
     calendar: 1.33,
+    smallButton: 1.33,
+    middleButton: 1.42,
   },
 
   radii: {
@@ -75,7 +78,7 @@ export const theme: ITheme = {
     standart: `2px 4px 9px 0px rgba(166, 141, 174, 0.28)`,
   },
 
-  space: [0, 2, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 64, 128, 256],
+  space: [0, 2, 4, 8, 10, 12, 16, 20, 24, 28, 32, 36, 40, 64, 128, 256],
 
   sizes: {
     wholeHeight: '100vh',
