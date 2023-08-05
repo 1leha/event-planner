@@ -77,7 +77,7 @@ export const Button = styled.button<IButton>`
         return p.theme.lineHeights.middleButton;
 
       default:
-        return p.theme.lineHeights.normal;
+        return p.theme.lineHeights.largeButton;
     }
   }};
   text-align: center;

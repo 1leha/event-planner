@@ -1,5 +1,6 @@
 import { Button } from 'components/common/Button';
 import { Container } from 'components/common/Container';
+import { TextField } from 'components/common/TextField';
 import { SVG } from 'img';
 
 export const Main = () => {
@@ -9,12 +10,12 @@ export const Main = () => {
         <Button variant="primary" icon={<SVG.PlusIcon />}>
           Add new event
         </Button>
-        <div>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima qui
-          nam harum nisi, quam optio laboriosam quisquam debitis distinctio
-          iusto quasi consequuntur nostrum, aliquam ratione sint tempora.
-          Maxime, perferendis nam.
-        </div>
+        <br />
+        <TextField error={false} label="City" name="city" type="text" />
+        <br />
+        <input type="date" />
+        <br />
+        <input type="time" />
       </Container>
     </div>
   );
