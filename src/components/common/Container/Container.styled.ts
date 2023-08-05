@@ -1,3 +1,4 @@
+import { breakPoint } from 'settings/breakpoints';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -11,22 +12,22 @@ export const Container = styled.div`
 
   /* background-color: aqua; */
 
-  @media screen and (min-width: 320px) {
-    min-width: 271px;
+  @media screen and (min-width: ${breakPoint.mobile}px) {
+    max-width: 271px;
 
     padding-left: 0;
     padding-right: 0;
   }
 
-  @media screen and (min-width: 768px) {
-    min-width: 688px;
+  @media screen and (min-width: ${breakPoint.tablet}px) {
+    max-width: 688px;
 
     padding-left: 0;
     padding-right: 0;
   }
 
-  @media screen and (min-width: 1320px) {
-    min-width: 1280px;
+  @media screen and (min-width: ${breakPoint.desktop}px) {
+    max-width: 1280px;
 
     padding-left: 0;
     padding-right: 0;
