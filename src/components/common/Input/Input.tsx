@@ -27,9 +27,9 @@ export const Input = ({
           {...restProps}
         />
         {
-          <SC.Icon error={error} onClick={resetFieldHandler}>
+          <SC.IconButton error={error} onClick={resetFieldHandler}>
             <SVG.CrossIcon />
-          </SC.Icon>
+          </SC.IconButton>
         }
       </SC.Wrapper>
     </>
