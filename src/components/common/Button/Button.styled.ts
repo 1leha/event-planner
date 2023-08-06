@@ -121,8 +121,7 @@ export const Button = styled.button<IButton>`
 
   transition: ${p => p.theme.transitions.standart};
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: ${p =>
       p.variant === 'primary'
         ? p => p.theme.colors.hover
