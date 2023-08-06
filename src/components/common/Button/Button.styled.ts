@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { IButton } from './interface';
 
 export const Button = styled.button<IButton>`
+  min-width: ${p => (p.size === 'l' && p.icon ? '58px' : '')}px;
   min-width: ${p => (p.width ? p.width + 'px' : '100%')};
 
   padding-top: ${p => {
@@ -105,6 +106,14 @@ export const Button = styled.button<IButton>`
   }};
 
   outline: none;
+
+  @media screen and (max-width: ${breakPoint.mobile}px) {
+    min-width: ${p => (p.size === 'l' && p.icon ? '58px' : '')};
+  }
+
+  @media screen and (min-width: ${breakPoint.mobile}px) {
+    min-width: ${p => (p.size === 'l' && p.icon ? '58px' : '')};
+  }
 
   @media screen and (min-width: ${breakPoint.tablet}px) {
     min-width: ${p => (p.size === 'l' || !p.size ? '193px' : '')};
