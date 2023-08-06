@@ -10,6 +10,8 @@ export const HeaderMobile = () => {
         style={{
           display: 'flex',
           justifyContent: 'space-between',
+          alignItems: 'center',
+          height: 48,
         }}
       >
         <Logo />

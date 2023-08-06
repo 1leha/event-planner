@@ -12,7 +12,7 @@ export const Main = () => {
         <Button variant="primary" size="l" icon={<SVG.PlusIcon />}>
           Add new event
         </Button>
-        <Button width={300} variant="seconary" size="l">
+        <Button width={200} variant="seconary" size="l">
           Edit
         </Button>
 

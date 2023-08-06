@@ -3,10 +3,14 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   height: 48px;
+  width: 100%;
+
   display: flex;
   gap: ${p => p.theme.space[5]}px;
   justify-content: space-between;
   align-items: center;
+
+  flex-grow: 1;
 
   margin-bottom: ${p => p.theme.space[0]}px;
 
@@ -22,6 +26,13 @@ export const Wrapper = styled.div`
   box-shadow: ${p => p.theme.shadows.standart};
 
   box-sizing: border-box;
+
+  @media screen and (min-width: 768px) {
+    width: 368px;
+  }
+  @media screen and (min-width: 1320px) {
+    width: 410px;
+  }
 `;
 
 export const Input = styled.input`
