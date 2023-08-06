@@ -24,20 +24,6 @@ export const Wrapper = styled.div<IInputUI>`
   background-color: ${p => p.theme.colors.white};
 `;
 
-export const Label = styled.label`
-  margin-top: 0;
-  margin-bottom: ${p => p.theme.space[3]}px;
-
-  color: ${p => p.theme.colors.accent};
-
-  font-family: ${p => p.theme.fonts.primary};
-  font-size: ${p => p.theme.fontSizes.m};
-  font-style: normal;
-  font-weight: ${p => p.theme.fontWeights.regular};
-  line-height: ${p => p.theme.lineHeights.normal};
-  letter-spacing: ${p => p.theme.letterSpacings.label};
-`;
-
 export const Input = styled.input`
   width: 100%;
   margin-top: 0;

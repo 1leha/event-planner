@@ -24,6 +24,7 @@ export const theme: ITheme = {
     text: '#3F3F3F',
     divider: '#ACA7C3',
     white: '#FFFFFF',
+    placeholder: '#888888',
   },
 
   fonts: {
@@ -41,6 +42,7 @@ export const theme: ITheme = {
   },
 
   fontWeights: {
+    thin: 300,
     regular: 400,
     medium: 500,
     semiBold: 600,
@@ -66,6 +68,8 @@ export const theme: ITheme = {
     smallButton: 1.33,
     middleButton: 1.42,
     largeButton: 1.4,
+
+    searchField: 1.4,
 
     textField: 1.5,
 
