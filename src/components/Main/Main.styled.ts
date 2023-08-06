@@ -9,4 +9,8 @@ export const Main = styled.main`
   background-image: url(${appBG});
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media screen and (min-width: 768px) {
+    height: calc(100vh - 92px);
+  }
 `;
