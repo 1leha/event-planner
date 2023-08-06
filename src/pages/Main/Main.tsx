@@ -9,9 +9,13 @@ export const Main = () => {
   return (
     <div>
       <Container>
-        <Button variant="primary" icon={<SVG.PlusIcon />}>
+        <Button variant="primary" size="l" icon={<SVG.PlusIcon />}>
           Add new event
         </Button>
+        <Button width={300} variant="seconary" size="l">
+          Edit
+        </Button>
+
         <br />
         <TextField
           error={false}

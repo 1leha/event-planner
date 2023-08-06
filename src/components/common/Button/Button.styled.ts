@@ -1,10 +1,9 @@
 import { breakPoint } from 'settings/breakpoints';
 import styled from 'styled-components';
-import { IButton } from './IButton';
+import { IButton } from './interface';
 
 export const Button = styled.button<IButton>`
-  width: ${p => p.fullWidth && '100%'};
-  min-width: 56px;
+  min-width: ${p => (p.width ? p.width + 'px' : '100%')};
 
   padding-top: ${p => {
     switch (p.size) {
@@ -107,12 +106,18 @@ export const Button = styled.button<IButton>`
 
   outline: none;
 
-  @media screen and (max-width: ${breakPoint.mobile}px) {
-    min-width: 56px;
+  @media screen and (min-width: ${breakPoint.tablet}px) {
+    min-width: ${p => (p.size === 'l' || !p.size ? '193px' : '')};
   }
 
-  @media screen and (min-width: ${breakPoint.tablet}px) {
-    min-width: ${p => (p.size === 'l' || !p.size ? '193px' : '0')};
+  transition: ${p => p.theme.transitions.standart};
+
+  &:hover,
+  &:focus {
+    background-color: ${p =>
+      p.variant === 'primary'
+        ? p => p.theme.colors.hover
+        : p => p.theme.colors.hoverSecondary};
   }
 `;
 
@@ -122,4 +127,18 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 22px;
+`;
+
+export const Icon = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0;
+
+  color: ${p => p.theme.colors.white};
+  background-color: transparent;
+
+  outline: none;
+  border: none;
 `;

@@ -5,6 +5,6 @@ export interface IButton {
   children: any;
   size?: TSize;
   variant?: TVariant;
-  fullWidth?: boolean;
+  width?: number;
   icon?: JSX.Element;
 }
