@@ -3,9 +3,13 @@ import { Button } from 'components/common/Button';
 import { Container } from 'components/common/Container';
 import { filterSearchParam } from 'helpers/filterSearchParam';
 import { useAppSearchParams } from 'helpers/hooks/useAppSearchParams';
+import { useCategories } from 'helpers/hooks/useCategories';
 import { IEvents } from 'helpers/interfaces/events';
 import { useEffect } from 'react';
-import { useGetEventsQuery } from 'redux/events/events.api';
+import {
+  useGetCategoriesQuery,
+  useGetEventsQuery,
+} from 'redux/events/events.api';
 
 export const Main = () => {
   const [tablet] = useMediaQuery(['(max-width: 768px)']);
@@ -20,6 +24,10 @@ export const Main = () => {
   const { data, isLoading, refetch } = useGetEventsQuery(
     searchParams.toString()
   );
+  const { data: categoryCollection, isLoading: categoryIsLoading } =
+    useGetCategoriesQuery();
+
+  const categories = useCategories(categoryCollection);
 
   useEffect(() => {
     setSearchParams(
