@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/event-planner/static/css/main.80bfb4d0.css",
-    "main.js": "/event-planner/static/js/main.64dd76c9.js",
+    "main.css": "/event-planner/static/css/main.63a63dab.css",
+    "main.js": "/event-planner/static/js/main.32020429.js",
     "static/js/787.3544c18c.chunk.js": "/event-planner/static/js/787.3544c18c.chunk.js",
     "static/media/bg.svg": "/event-planner/static/media/bg.8780fd90ac1b75d38f109e81468995bc.svg",
     "static/media/logo.svg": "/event-planner/static/media/logo.963bc34a67716b48020d809fb3bfa738.svg",
@@ -17,12 +17,12 @@
     "static/media/filters.svg": "/event-planner/static/media/filters.58eb9a24727fd82b6122a4d1b2bf6fce.svg",
     "static/media/plus.svg": "/event-planner/static/media/plus.e10f0491be4a926b3cb4abec4970a60b.svg",
     "static/media/chevron-text-field.svg": "/event-planner/static/media/chevron-text-field.bc2bf716bdd8fb92a6ecff69f784c7db.svg",
-    "main.80bfb4d0.css.map": "/event-planner/static/css/main.80bfb4d0.css.map",
-    "main.64dd76c9.js.map": "/event-planner/static/js/main.64dd76c9.js.map",
+    "main.63a63dab.css.map": "/event-planner/static/css/main.63a63dab.css.map",
+    "main.32020429.js.map": "/event-planner/static/js/main.32020429.js.map",
     "787.3544c18c.chunk.js.map": "/event-planner/static/js/787.3544c18c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.80bfb4d0.css",
-    "static/js/main.64dd76c9.js"
+    "static/css/main.63a63dab.css",
+    "static/js/main.32020429.js"
   ]
 }
