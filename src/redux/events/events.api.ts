@@ -22,9 +22,20 @@ export const eventApi = createApi({
         method: 'GET',
         url: `/events?${params}`,
       }),
+
+      providesTags: ['events'],
+    }),
+
+    getCategories: builder.query<IEvents['category'][], void | null>({
+      query: () => ({
+        method: 'GET',
+        url: `/events`,
+      }),
+      transformResponse: (response: IEvents[]) =>
+        response.map(el => el.category),
       providesTags: ['events'],
     }),
   }),
 });
 
-export const { useGetEventsQuery } = eventApi;
+export const { useGetEventsQuery, useGetCategoriesQuery } = eventApi;
