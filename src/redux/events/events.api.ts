@@ -1,4 +1,13 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { IEvents } from 'helpers/interfaces/events';
+
+interface IResponse<T> extends Array<T> {
+  page: number;
+  per_page: number;
+  total: number;
+  total_pages: number;
+  data: T[] | [];
+}
 
 export const eventApi = createApi({
   reducerPath: 'events',
@@ -8,11 +17,10 @@ export const eventApi = createApi({
   tagTypes: ['events'],
 
   endpoints: builder => ({
-    getEvents: builder.query<any[] | [], null>({
-      query: () => ({
+    getEvents: builder.query<IResponse<IEvents>, string | void | null>({
+      query: params => ({
         method: 'GET',
-        url: '/events',
-        headers: { 'content-type': 'application/json' },
+        url: `/events?${params}`,
       }),
       providesTags: ['events'],
     }),
