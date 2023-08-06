@@ -1,21 +1,15 @@
 import { useMediaQuery } from '@yamada-ui/use-media-query';
 import * as SC from './Button.styled';
-import { IButton } from './IButton';
+import { IButton } from './interface';
 
-export const Button = ({
-  children,
-  size,
-  variant,
-  fullWidth,
-  icon,
-}: IButton) => {
+export const Button = ({ children, size, variant, width, icon }: IButton) => {
   const [mobile] = useMediaQuery('(max-width: 767px)');
 
   return (
-    <SC.Button size={size} fullWidth={fullWidth} variant={variant} icon={icon}>
+    <SC.Button size={size} width={width} variant={variant} icon={icon}>
       <SC.Wrapper>
-        {icon}
-        {!mobile && children}
+        {icon && <SC.Icon>{icon}</SC.Icon>}
+        {(!mobile && children) || (!icon && children)}
       </SC.Wrapper>
     </SC.Button>
   );

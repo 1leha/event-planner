@@ -16,7 +16,7 @@ export const theme: ITheme = {
     bg: '#FEFCFF',
     accent: '#7B61FF',
     hover: '#6243FF',
-    iconHover: '#7B61FF20',
+    hoverSecondary: '#7B61FF20',
     error: '#FF2B77',
     hight: '#FF2B77',
     medium: '#E2A300',
@@ -98,7 +98,7 @@ export const theme: ITheme = {
     wholeHeight: '100vh',
   },
 
-  transitions: { standart: 'all 0.3s ease-in' },
+  transitions: { standart: 'all 0.2s ease-in' },
 };
 
 // borders:	border, border-top, border-right, border-bottom, border-left, border-block, border-block-end, border-block-start, border-inline, border-inline-end, border-inline-start
