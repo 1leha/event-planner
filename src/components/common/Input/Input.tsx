@@ -18,12 +18,12 @@ export const Input = ({
 
   return (
     <>
-      <SC.Label htmlFor={name}>{label}</SC.Label>
       <SC.Wrapper error={error}>
         <SC.Input
           autoComplete="off"
           value={value}
           onChange={e => setValue(e.target.value)}
+          name={name}
           {...restProps}
         />
         {

@@ -17,7 +17,21 @@ export const Error = styled.p<IInputUI>`
   text-align: right;
 `;
 
-export const Wrapper = styled.div<IInputUI>`
+export const Label = styled.label`
+  margin-top: 0;
+  margin-bottom: ${p => p.theme.space[3]}px;
+
+  color: ${p => p.theme.colors.accent};
+
+  font-family: ${p => p.theme.fonts.primary};
+  font-size: ${p => p.theme.fontSizes.m};
+  font-style: normal;
+  font-weight: ${p => p.theme.fontWeights.regular};
+  line-height: ${p => p.theme.lineHeights.normal};
+  letter-spacing: ${p => p.theme.letterSpacings.label};
+`;
+
+export const Wrapper = styled.div`
   height: 100px;
 
   display: flex;

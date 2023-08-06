@@ -1,6 +1,7 @@
 import { Logo } from 'components/common/Logo';
 import * as SC from './HeaderMobile.styled';
 import { Box } from 'components/common/Box';
+import { SearchField } from 'components/SearchField';
 
 export const HeaderMobile = () => {
   return (
@@ -18,7 +19,7 @@ export const HeaderMobile = () => {
         </select>
       </Box>
 
-      <input type="text" />
+      <SearchField />
     </SC.Wrapper>
   );
 };

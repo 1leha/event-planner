@@ -1,6 +1,7 @@
 import { Logo } from 'components/common/Logo';
 import * as SC from './HeaderStandart.styled';
 import { Box } from 'components/common/Box';
+import { SearchField } from 'components/SearchField';
 
 export const HeaderStandart = () => {
   return (
@@ -10,11 +11,12 @@ export const HeaderStandart = () => {
       <Box
         style={{
           display: 'flex',
-          justifyContent: 'space-between',
           gap: 24,
+          justifyContent: 'space-between',
+          alignItems: 'center',
         }}
       >
-        <input type="te xt" />
+        <SearchField />
         <select name="lang">
           <option>En</option>
           <option>Ua</option>

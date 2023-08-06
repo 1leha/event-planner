@@ -6,4 +6,5 @@ export const Wrapper = styled.div`
   display: flex;
   gap: ${p => p.theme.space[7]}px;
   justify-content: space-between;
+  align-items: center;
 `;
