@@ -55,7 +55,7 @@ export const Input = styled.input`
   outline: none;
 `;
 
-export const Icon = styled.button<IInputUI>`
+export const IconButton = styled.button<IInputUI>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,4 +68,12 @@ export const Icon = styled.button<IInputUI>`
 
   outline: none;
   border: none;
+
+  transition: ${p => p.theme.transitions.standart};
+
+  border-radius: ${p => p.theme.radii.round};
+
+  &:hover {
+    background-color: ${p => p.theme.colors.iconHover};
+  }
 `;

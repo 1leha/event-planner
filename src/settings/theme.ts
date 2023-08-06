@@ -15,6 +15,8 @@ export const theme: ITheme = {
   colors: {
     bg: '#FEFCFF',
     accent: '#7B61FF',
+    hover: '#6243FF',
+    iconHover: '#7B61FF20',
     error: '#FF2B77',
     hight: '#FF2B77',
     medium: '#E2A300',
