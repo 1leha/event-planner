@@ -26,29 +26,7 @@ export const TextField = (props: any): JSX.Element => {
           </SC.IconButton>
         }
       </SC.InputWrapper>
-      {error && <SC.Error>{error}</SC.Error>}
+      {isFieldError && <SC.Error>{error}</SC.Error>}
     </SC.Wrapper>
   );
 };
-
-// export const TextField = ({
-//   error,
-//   label,
-//   name,
-//   fieldReset,
-//   helperText,
-//   ...restProps
-// }: IInputUI) => {
-//   return (
-//     <SC.Wrapper>
-//       <SC.Label htmlFor={name}>{label}</SC.Label>
-//       <Input
-//         error={String(error)}
-//         name={name}
-//         fieldReset={fieldReset}
-//         {...restProps}
-//       />
-//       {error && <SC.Error>{helperText}</SC.Error>}
-//     </SC.Wrapper>
-//   );
-// };

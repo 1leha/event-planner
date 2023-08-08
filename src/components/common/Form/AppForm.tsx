@@ -1,4 +1,4 @@
-import { Formik, Form, Field, FormikProps } from 'formik';
+import { Formik, Form, FormikProps } from 'formik';
 import { Button } from '../Button';
 import * as SC from './Form.styled';
 import {
@@ -7,6 +7,7 @@ import {
 } from 'helpers/validation/formInputSchema';
 import { TextField } from '../TextField';
 import { MultilinedField } from '../MultilinedField';
+import { TimeField } from '../TimeField';
 
 // interface IProps {
 //   title: string;
@@ -52,11 +53,6 @@ export const AppForm = ({ inputValue }: IProps) => {
       validationSchema={formInputSchema}
     >
       {(formik: FormikProps<TInputSchema>) => {
-        const fieldResetHandler = (name: string) => {
-          // console.log('name', name);
-          formik.setFieldValue(name, '');
-        };
-
         return (
           <Form>
             <SC.Wrapper>
@@ -72,8 +68,8 @@ export const AppForm = ({ inputValue }: IProps) => {
                 // placeholder="Description"
                 label="Description"
               />
-              {/* <TextField type="date" name="date" />
-              <TextField type="time" name="time" /> */}
+              <TextField type="date" name="date" />
+              <TimeField name="time" />
               <TextField
                 type="text"
                 name="location"
