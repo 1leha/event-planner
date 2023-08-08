@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import arrowDown from 'img/icons/chevron-text-field_colored.svg';
 import { IInputUI } from 'helpers/interfaces/inputs';
 
 export const Label = styled.label`
@@ -30,6 +31,15 @@ export const Input = styled.input`
 
   border: none;
   outline: none;
+
+  &::-webkit-calendar-picker-indicator {
+    /* border: 2px solid; */
+    color: ${p => p.theme.colors.accent};
+    background-image: url(${arrowDown});
+    padding: 0;
+    height: 24px;
+    width: 24px;
+  }
 `;
 
 export const IconButton = styled.button<IInputUI>`

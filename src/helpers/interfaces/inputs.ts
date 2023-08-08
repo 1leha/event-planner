@@ -8,3 +8,11 @@ export interface IInputUI extends InputHTMLAttributes<HTMLInputElement> {
   name?: string;
   type?: string;
 }
+
+export interface IMultilinedUI
+  extends InputHTMLAttributes<HTMLTextAreaElement> {
+  rightIcon?: JSX.Element;
+  error?: boolean | string;
+  label?: string;
+  name?: string;
+}

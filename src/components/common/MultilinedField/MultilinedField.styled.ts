@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { IInputUI } from '../TextField/interface';
-import { IMultilinedUI } from './interface';
+import { IInputUI, IMultilinedUI } from 'helpers/interfaces/inputs';
 
 export const MultiLined = styled.textarea`
   width: 100%;

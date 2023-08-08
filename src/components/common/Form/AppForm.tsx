@@ -8,6 +8,7 @@ import {
 import { TextField } from '../TextField';
 import { MultilinedField } from '../MultilinedField';
 import { TimeField } from '../TimeField';
+import { DateField } from '../DateField';
 
 // interface IProps {
 //   title: string;
@@ -68,7 +69,7 @@ export const AppForm = ({ inputValue }: IProps) => {
                 // placeholder="Description"
                 label="Description"
               />
-              <TextField type="date" name="date" />
+              <DateField name="date" />
               <TimeField name="time" />
               <TextField
                 type="text"
