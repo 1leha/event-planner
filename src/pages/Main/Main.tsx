@@ -24,6 +24,8 @@ export const Main = () => {
   const { data, isLoading, refetch } = useGetEventsQuery(
     searchParams.toString()
   );
+  console.log('data', data);
+
   const { data: categoryCollection, isLoading: categoryIsLoading } =
     useGetCategoriesQuery();
 

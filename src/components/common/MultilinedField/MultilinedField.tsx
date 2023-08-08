@@ -1,41 +1,34 @@
 import { SVG } from 'img';
 import * as SC from './MultilinedField.styled';
-import { useState } from 'react';
-import { IMultilinedUI } from './interface';
+import { useField } from 'formik';
 
-export const MultilinedField = ({
-  error,
-  label,
-  name,
-  ...restProps
-}: IMultilinedUI) => {
-  const [value, setValue] = useState('');
+export const MultilinedField = (props: any): JSX.Element => {
+  const [field, meta, helpers] = useField(props);
 
-  const resetFieldHandler = () => {
-    setValue('');
-  };
+  // console.log('field', field);
+  // console.log('meta', meta);
+
+  // const { value } = field;
+  const { error } = meta;
+  const { setValue } = helpers;
+
+  // console.log('error', error);
+
+  // console.log('value', value);
 
   return (
     <SC.Wrapper>
-      <SC.Label htmlFor="description">{label}</SC.Label>
-      <SC.TextAreaWrapper error={String(error)}>
-        <SC.MultiLined
-          name="description"
-          id="description"
-          cols={30}
-          rows={4}
-          value={value}
-          onChange={e => setValue(e.target.value)}
-          {...restProps}
-        />
+      <SC.Label>{props.label}</SC.Label>
+      <SC.TextAreaWrapper error={String(!!error)}>
+        <SC.MultiLined {...field} {...props} cols={30} rows={4} />
+
         {
-          <SC.IconButton error={String(error)} onClick={resetFieldHandler}>
+          <SC.IconButton error={String(!!error)} onClick={() => setValue('')}>
             <SVG.CrossIcon />
           </SC.IconButton>
         }
       </SC.TextAreaWrapper>
-      {/* <Input label={label} error={String(error)} name={name} {...restProps} /> */}
-      {error && <SC.Error>Invalid input</SC.Error>}
+      {error && <SC.Error>{error}</SC.Error>}
     </SC.Wrapper>
   );
 };
