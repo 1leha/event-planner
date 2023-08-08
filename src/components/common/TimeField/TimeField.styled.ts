@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { IInputUI } from './interface';
+import { IInputUI } from 'helpers/interfaces/inputs';
 import arrowDown from 'img/icons/chevron-text-field_colored.svg';
 
 export const Label = styled.label`

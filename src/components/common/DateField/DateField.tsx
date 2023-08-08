@@ -1,7 +1,7 @@
-import * as SC from './TimeField.styled';
+import * as SC from './DateField.styled';
 import { useField } from 'formik';
 
-export const TimeField = (props: any): JSX.Element => {
+export const DateField = (props: any): JSX.Element => {
   const [field, meta] = useField(props);
 
   const { name } = field;
@@ -13,7 +13,7 @@ export const TimeField = (props: any): JSX.Element => {
     <SC.Wrapper>
       <SC.Label htmlFor={name}>{props.label}</SC.Label>
       <SC.InputWrapper error={String(isFieldError)}>
-        <SC.Input {...field} {...props} type="time" />
+        <SC.Input {...field} {...props} type="date" />
       </SC.InputWrapper>
       {isFieldError && <SC.Error>{error}</SC.Error>}
     </SC.Wrapper>
