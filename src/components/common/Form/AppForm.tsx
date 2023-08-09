@@ -9,17 +9,9 @@ import { TextField } from '../TextField';
 import { MultilinedField } from '../MultilinedField';
 import { TimeField } from '../TimeField';
 import { DateField } from '../DateField';
+import { SelectField } from '../SelectField';
 
-// interface IProps {
-//   title: string;
-//   description?: string;
-//   date: string;
-//   time: string;
-//   location: string;
-//   category: string;
-//   image: string;
-//   priority: string;
-// }
+const mockList = ['high', 'medium', 'low'];
 
 interface IProps {
   inputValue?: TInputSchema;
@@ -57,6 +49,13 @@ export const AppForm = ({ inputValue }: IProps) => {
         return (
           <Form>
             <SC.Wrapper>
+              <SelectField
+                type="text"
+                name="category"
+                placeholder="category"
+                label="Category"
+                options={mockList}
+              />
               <TextField
                 type="text"
                 name="title"
