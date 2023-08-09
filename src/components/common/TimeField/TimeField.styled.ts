@@ -33,12 +33,20 @@ export const Input = styled.input`
   outline: none;
 
   &::-webkit-calendar-picker-indicator {
-    /* border: 2px solid; */
     color: ${p => p.theme.colors.accent};
     background-image: url(${arrowDown});
+    background-color: transparent;
     padding: 0;
     height: 24px;
     width: 24px;
+
+    border-radius: ${p => p.theme.radii.round};
+
+    transition: ${p => p.theme.transitions.standart};
+
+    &:hover {
+      background-color: ${p => p.theme.colors.hoverSecondary};
+    }
   }
 `;
 

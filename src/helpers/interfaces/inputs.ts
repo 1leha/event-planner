@@ -3,10 +3,25 @@ import { InputHTMLAttributes } from 'react';
 export interface IInputUI extends InputHTMLAttributes<HTMLInputElement> {
   rightIcon?: JSX.Element;
   error?: boolean | string;
-  multiline?: boolean;
   label?: string;
-  name?: string;
-  type?: string;
+}
+
+export interface ISelectUI extends InputHTMLAttributes<HTMLInputElement> {
+  rightIcon?: JSX.Element;
+
+  label?: string | undefined;
+  error?: boolean | string;
+  isopen?: boolean | string;
+
+  options: string[];
+  // [key: string]: any;
+}
+
+export interface IIconButtonUI extends InputHTMLAttributes<HTMLButtonElement> {
+  error?: boolean | string;
+  isopen?: boolean | string;
+
+  // [key: string]: any;
 }
 
 export interface IMultilinedUI
@@ -14,5 +29,4 @@ export interface IMultilinedUI
   rightIcon?: JSX.Element;
   error?: boolean | string;
   label?: string;
-  name?: string;
 }

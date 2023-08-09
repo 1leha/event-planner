@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import arrowDown from 'img/icons/chevron-text-field_colored.svg';
-import { IInputUI } from 'helpers/interfaces/inputs';
+import { IIconButtonUI, IInputUI } from 'helpers/interfaces/inputs';
 
 export const Label = styled.label`
   margin-top: 0;
@@ -32,25 +31,10 @@ export const Input = styled.input`
   border: none;
   outline: none;
 
-  &::-webkit-calendar-picker-indicator {
-    color: ${p => p.theme.colors.accent};
-    background-image: url(${arrowDown});
-    background-color: transparent;
-    padding: 0;
-    height: 24px;
-    width: 24px;
-
-    border-radius: ${p => p.theme.radii.round};
-
-    transition: ${p => p.theme.transitions.standart};
-
-    &:hover {
-      background-color: ${p => p.theme.colors.hoverSecondary};
-    }
-  }
+  cursor: pointer;
 `;
 
-export const IconButton = styled.button<IInputUI>`
+export const IconButton = styled.button<IIconButtonUI>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,6 +44,8 @@ export const IconButton = styled.button<IInputUI>`
   color: ${p =>
     p.error === 'true' ? p.theme.colors.error : p.theme.colors.accent};
   background-color: transparent;
+
+  transform: rotateZ(${p => (p.isopen === 'true' ? '180deg' : '0')});
 
   outline: none;
   border: none;
@@ -79,6 +65,8 @@ export const InputWrapper = styled.div<IInputUI>`
   justify-content: space-between;
   align-items: center;
 
+  height: 56px;
+
   margin-bottom: ${p => p.theme.space[2]}px;
 
   padding-left: ${p => p.theme.space[5]}px;
@@ -93,9 +81,12 @@ export const InputWrapper = styled.div<IInputUI>`
     p.error === 'true' ? p.theme.colors.error : p.theme.colors.accent};
 
   background-color: ${p => p.theme.colors.white};
+
+  box-sizing: border-box;
 `;
 
 export const Wrapper = styled.div`
+  position: relative;
   height: 100px;
 
   display: flex;
