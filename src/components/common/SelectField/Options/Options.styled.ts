@@ -27,6 +27,7 @@ export const OptionList = styled.ul<IProps>`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  gap: ${p => p.theme.space[6]}px;
 
   list-style: none;
   width: 100%;
@@ -49,8 +50,7 @@ export const OptionList = styled.ul<IProps>`
 
 export const OptionItem = styled.li`
   display: block;
-  /* flex-direction: column;
-  justify-content: flex-start; */
+  position: relative;
 
   list-style: none;
   width: 100%;
@@ -59,6 +59,21 @@ export const OptionItem = styled.li`
   margin: ${p => p.theme.space[0]}px;
 
   color: ${p => p.theme.colors.text};
+
+  &:not(:last-child) {
+    margin-bottom: ${p => p.theme.space[6]}px;
+  }
+
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: calc(100% + ${p => p.theme.space[6]}px);
+
+    width: 100%;
+    height: 1px;
+    background-color: ${p => p.theme.colors.divider};
+  }
 
   &:hover {
     color: ${p => p.theme.colors.hover};
