@@ -21,6 +21,8 @@ export const Wrapper = styled.div<IProps>`
   transition: ${p => p.theme.transitions.standart};
 
   box-sizing: border-box;
+
+  z-index: 100;
 `;
 
 export const OptionList = styled.ul<IProps>`

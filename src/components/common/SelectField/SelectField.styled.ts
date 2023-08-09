@@ -31,7 +31,7 @@ export const Input = styled.input`
   border: none;
   outline: none;
 
-  cursor: pointer;
+  cursor: ${p => (p.readOnly ? 'pointer' : 'auto')};
 `;
 
 export const IconButton = styled.button<IIconButtonUI>`

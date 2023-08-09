@@ -55,7 +55,10 @@ export const AppForm = ({ inputValue }: IProps) => {
                 placeholder="Select category"
                 label="Category"
                 options={mockList}
+                readOnly
+                // setDefaultValue
               />
+
               <TextField
                 type="text"
                 name="title"

@@ -5,27 +5,33 @@ import { useField } from 'formik';
 import { useEffect, useState } from 'react';
 import { Options } from './Options';
 import { ISelectUI } from 'helpers/interfaces/inputs';
+import { toUpperFirstLetter } from 'helpers/toUpperFirsLetter';
 
 export const SelectField = ({
   label,
   options,
+  setDefaultValue,
   ...props
 }: ISelectUI): JSX.Element => {
   const [field, meta, helpers] = useField(props as any);
   const [isOpen, setIsOpen] = useState(false);
-  const [isOptionSelected, setIsOptionSelected] = useState(false);
 
   const { name } = field;
   const { error, touched } = meta;
   const { setValue, setTouched } = helpers;
+  const defaultValue = toUpperFirstLetter(options[0]);
 
   useEffect(() => {
     if (isOpen) {
       setTouched(false);
     }
-  }, [isOpen, isOptionSelected, setTouched, touched]);
+  }, [isOpen, setTouched, touched]);
 
-  // console.log('component touched', touched);
+  useEffect(() => {
+    if (setDefaultValue) {
+      setValue(defaultValue);
+    }
+  }, [defaultValue, options, setDefaultValue, setValue]);
 
   const isFieldError = error && touched;
 
@@ -40,8 +46,8 @@ export const SelectField = ({
         <SC.Input
           {...field}
           {...props}
-          readOnly
-          onClick={handlerToggleOptions}
+          readOnly={props.readOnly}
+          onClick={props.readOnly ? handlerToggleOptions : () => {}}
         />
         {
           <SC.IconButton
