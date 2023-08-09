@@ -1,5 +1,5 @@
 import { toUpperFirstLetter } from 'helpers/toUpperFirsLetter';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import * as SC from './Options.styled';
 

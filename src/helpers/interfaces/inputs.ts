@@ -12,6 +12,7 @@ export interface ISelectUI extends InputHTMLAttributes<HTMLInputElement> {
   label?: string | undefined;
   error?: boolean | string;
   isopen?: boolean | string;
+  setDefaultValue?: boolean;
 
   options: string[];
   // [key: string]: any;
