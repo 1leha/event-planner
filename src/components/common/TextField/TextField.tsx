@@ -11,8 +11,6 @@ export const TextField = (props: any): JSX.Element => {
   const { setValue } = helpers;
   const { disabled } = props;
 
-  console.log('disabled', disabled);
-
   const isFieldError = error && touched;
 
   return (
