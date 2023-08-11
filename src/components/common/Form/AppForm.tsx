@@ -66,7 +66,7 @@ export const AppForm = ({ inputValue }: IProps) => {
       validationSchema={formInputSchema}
     >
       {(formik: FormikProps<TInputSchema>) => {
-        console.log(formik.errors);
+        // console.log(formik.errors);
         return (
           <>
             <BackLink to="/" />

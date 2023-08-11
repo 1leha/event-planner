@@ -9,18 +9,24 @@ export const TextField = (props: any): JSX.Element => {
   const { name } = field;
   const { error, touched } = meta;
   const { setValue } = helpers;
+  const { disabled } = props;
+
+  console.log('disabled', disabled);
 
   const isFieldError = error && touched;
 
   return (
     <SC.Wrapper>
-      <SC.Label htmlFor={name}>{props.label}</SC.Label>
-      <SC.InputWrapper error={String(isFieldError)}>
+      <SC.Label htmlFor={name} disabled={props.disabled}>
+        {props.label}
+      </SC.Label>
+      <SC.InputWrapper error={String(isFieldError)} disabled={props.disabled}>
         <SC.Input {...field} {...props} autoComplete="off" />
         {
           <SC.IconButton
             error={String(isFieldError)}
-            onClick={() => setValue('')}
+            onClick={disabled ? () => {} : () => setValue('')}
+            disabled={disabled}
           >
             <SVG.CrossIcon />
           </SC.IconButton>
