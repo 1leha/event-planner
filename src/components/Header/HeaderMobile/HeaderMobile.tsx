@@ -17,7 +17,7 @@ export const HeaderMobile = () => {
         }}
       >
         <Logo />
-        <LangSelector options={appLang} />
+        <LangSelector options={appLang} readOnly type="text" name="lang" />
       </Box>
 
       <SearchField />

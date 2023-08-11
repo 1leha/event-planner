@@ -4,7 +4,6 @@ import { IIconButtonUI, IInputUI } from 'helpers/interfaces/inputs';
 export const Wrapper = styled.div`
   position: relative;
   width: 69px;
-  /* height: 48px; */
 
   padding-left: ${p => p.theme.space[5]}px;
   padding-right: ${p => p.theme.space[2]}px;
@@ -16,6 +15,8 @@ export const Wrapper = styled.div`
   background-color: ${p => p.theme.colors.white};
 
   box-shadow: ${p => p.theme.shadows.standart};
+
+  cursor: pointer;
 `;
 
 export const InputWrapper = styled.div<IInputUI>`
@@ -27,8 +28,6 @@ export const InputWrapper = styled.div<IInputUI>`
   height: 24px;
 
   color: ${p => p.theme.colors.text};
-  border-color: ${p =>
-    p.error === 'true' ? p.theme.colors.error : p.theme.colors.accent};
 
   box-sizing: border-box;
 
@@ -37,6 +36,7 @@ export const InputWrapper = styled.div<IInputUI>`
   &:hover {
     color: ${p => p.theme.colors.hover};
   }
+  cursor: pointer;
 `;
 
 export const Input = styled.input`
@@ -55,7 +55,7 @@ export const Input = styled.input`
   border: none;
   outline: none;
 
-  cursor: ${p => (p.readOnly ? 'pointer' : 'auto')};
+  cursor: pointer;
   transition: ${p => p.theme.transitions.standart};
 `;
 
