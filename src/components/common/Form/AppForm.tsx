@@ -1,4 +1,4 @@
-import { Formik, Form, FormikProps } from 'formik';
+import { Formik, FormikProps } from 'formik';
 import { Button } from '../Button';
 import * as SC from './Form.styled';
 import {
@@ -10,12 +10,11 @@ import { MultilinedField } from '../MultilinedField';
 import { TimeField } from '../TimeField';
 import { DateField } from '../DateField';
 import { SelectField } from '../SelectField';
-import { Link } from 'react-router-dom';
 import { BackLink } from '../BackLink';
 import { priorityList } from 'settings/prioritys';
-import { parse, parseISO } from 'date-fns';
-import { useGetCategoriesQuery } from 'redux/events/events.api';
+import { parse } from 'date-fns';
 import { useCategories } from 'helpers/hooks/useCategories';
+import { useDateTime } from 'helpers/hooks/useDateTime';
 
 interface IProps {
   inputValue?: TInputSchema;
@@ -35,6 +34,7 @@ const initialValues: TInputSchema = {
 export const AppForm = ({ inputValue }: IProps) => {
   // console.log('inputValues', inputValue);
   const { categories } = useCategories();
+  const { currentTime, currentDate } = useDateTime();
 
   const handlerSubmit = (formValues: TInputSchema, actions: any) => {
     console.log('formValues', formValues);
@@ -70,7 +70,9 @@ export const AppForm = ({ inputValue }: IProps) => {
         return (
           <>
             <BackLink to="/" />
-            <SC.Title>Create new event </SC.Title>
+            <SC.Title>
+              {inputValue ? 'Edit event' : 'Create new event'}
+            </SC.Title>
             <SC.Form>
               <SC.Wrapper>
                 <TextField

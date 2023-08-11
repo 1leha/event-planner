@@ -1,13 +1,24 @@
+import { useEffect } from 'react';
+
 import * as SC from './TimeField.styled';
 import { useField } from 'formik';
+import { useDateTime } from 'helpers/hooks/useDateTime';
 
 export const TimeField = (props: any): JSX.Element => {
-  const [field, meta] = useField(props);
+  const [field, meta, helpers] = useField(props);
+  const { currentTime } = useDateTime();
 
   const { name } = field;
-  const { error, touched } = meta;
+  const { error, touched, value } = meta;
+  const { setValue } = helpers;
 
-  const isFieldError = error && touched;
+  useEffect(() => {
+    if (!touched) {
+      setValue(currentTime);
+    }
+  }, [currentTime, setValue, touched]);
+
+  const isFieldError = !value || (error && touched);
 
   return (
     <SC.Wrapper>

@@ -1,13 +1,23 @@
+import { useEffect } from 'react';
 import * as SC from './DateField.styled';
 import { useField } from 'formik';
+import { useDateTime } from 'helpers/hooks/useDateTime';
 
 export const DateField = (props: any): JSX.Element => {
-  const [field, meta] = useField(props);
+  const [field, meta, helpers] = useField(props);
+  const { currentDate } = useDateTime();
 
   const { name } = field;
-  const { error, touched } = meta;
+  const { error, touched, value } = meta;
+  const { setValue } = helpers;
 
-  const isFieldError = error && touched;
+  useEffect(() => {
+    if (!touched) {
+      setValue(currentDate);
+    }
+  }, [currentDate, setValue, touched]);
+
+  const isFieldError = !value || (error && touched);
 
   return (
     <SC.Wrapper>
@@ -19,3 +29,6 @@ export const DateField = (props: any): JSX.Element => {
     </SC.Wrapper>
   );
 };
+function useEffec(arg0: () => void, arg1: never[]) {
+  throw new Error('Function not implemented.');
+}
