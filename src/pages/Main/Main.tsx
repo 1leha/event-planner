@@ -24,12 +24,7 @@ export const Main = () => {
   const { data, isLoading, refetch } = useGetEventsQuery(
     searchParams.toString()
   );
-  console.log('data', data);
-
-  const { data: categoryCollection, isLoading: categoryIsLoading } =
-    useGetCategoriesQuery();
-
-  const categories = useCategories(categoryCollection);
+  // console.log('data', data);
 
   useEffect(() => {
     setSearchParams(

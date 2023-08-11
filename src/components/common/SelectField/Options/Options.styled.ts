@@ -6,6 +6,7 @@ interface IProps {
 
 export const Wrapper = styled.div<IProps>`
   width: 100%;
+  height: 168px;
 
   padding: ${p => p.theme.space[6]}px;
 
@@ -22,6 +23,11 @@ export const Wrapper = styled.div<IProps>`
 
   box-sizing: border-box;
 
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   z-index: 100;
 `;
 
@@ -33,19 +39,12 @@ export const OptionList = styled.ul<IProps>`
 
   list-style: none;
   width: 100%;
+  height: fit-content;
 
   padding: ${p => p.theme.space[0]}px;
   margin: ${p => p.theme.space[0]}px;
 
   color: ${p => p.theme.colors.text};
-
-  /* background-color: ${p => p.theme.colors.white}; */
-  /* border-radius: ${p => p.theme.radii.textField}; */
-
-  /* box-shadow: ${p => p.theme.shadows.standart}; */
-
-  /* transition: ${p => p.theme.transitions.standart};
-  opacity: ${p => (p.isopen === 'true' ? 1 : 0)}; */
 
   box-sizing: border-box;
 `;

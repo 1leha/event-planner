@@ -19,7 +19,8 @@ export const SelectField = ({
   const { name } = field;
   const { error, touched } = meta;
   const { setValue, setTouched } = helpers;
-  const defaultValue = toUpperFirstLetter(options[0]);
+  const defaultValue =
+    options.length > 0 ? toUpperFirstLetter(options[0]) : null;
 
   useEffect(() => {
     if (isOpen) {
@@ -28,7 +29,7 @@ export const SelectField = ({
   }, [isOpen, setTouched, touched]);
 
   useEffect(() => {
-    if (setDefaultValue) {
+    if (setDefaultValue && options.length > 0) {
       setValue(defaultValue);
     }
   }, [defaultValue, options, setDefaultValue, setValue]);
@@ -47,7 +48,11 @@ export const SelectField = ({
           {...field}
           {...props}
           readOnly={props.readOnly}
-          onClick={props.readOnly ? handlerToggleOptions : () => {}}
+          onClick={
+            props.readOnly || options.length > 0
+              ? handlerToggleOptions
+              : () => {}
+          }
         />
         {
           <SC.IconButton
