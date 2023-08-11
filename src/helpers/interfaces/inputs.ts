@@ -18,6 +18,11 @@ export interface ISelectUI extends InputHTMLAttributes<HTMLInputElement> {
   // [key: string]: any;
 }
 
+export interface ILangUI extends InputHTMLAttributes<HTMLInputElement> {
+  isopen?: boolean | string;
+  options: string[];
+}
+
 export interface IIconButtonUI extends InputHTMLAttributes<HTMLButtonElement> {
   error?: boolean | string;
   isopen?: boolean | string;
