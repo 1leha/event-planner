@@ -40,6 +40,8 @@ export const SelectField = ({
     setIsOpen(!isOpen);
   };
 
+  // console.log('SelectField isOpen', isOpen);
+
   return (
     <SC.Wrapper>
       <SC.Label htmlFor={name}>{label}</SC.Label>
