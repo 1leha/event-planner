@@ -1,10 +1,9 @@
 import { toUpperFirstLetter } from 'helpers/toUpperFirsLetter';
-import React, { useEffect } from 'react';
 
 import * as SC from './Options.styled';
 
 interface IProps {
-  options: string[];
+  options: string[] | [];
   isOpen: boolean;
   setValue: (option: string) => void;
   onClose: () => void;

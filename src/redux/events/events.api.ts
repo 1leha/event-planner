@@ -12,7 +12,8 @@ interface IResponse<T> extends Array<T> {
 export const eventApi = createApi({
   reducerPath: 'events',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://63e11c56dd7041cafb4147dc.mockapi.io',
+    baseUrl: process.env.REACT_APP_MOKAPI_ENDPOINT,
+    // baseUrl: 'https://63e11c56dd7041cafb4147dc.mockapi.io',
   }),
   tagTypes: ['events'],
 

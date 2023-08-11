@@ -16,7 +16,7 @@ export const TextField = (props: any): JSX.Element => {
     <SC.Wrapper>
       <SC.Label htmlFor={name}>{props.label}</SC.Label>
       <SC.InputWrapper error={String(isFieldError)}>
-        <SC.Input {...field} {...props} />
+        <SC.Input {...field} {...props} autoComplete="off" />
         {
           <SC.IconButton
             error={String(isFieldError)}

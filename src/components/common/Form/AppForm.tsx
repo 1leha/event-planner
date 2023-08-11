@@ -13,6 +13,9 @@ import { SelectField } from '../SelectField';
 import { Link } from 'react-router-dom';
 import { BackLink } from '../BackLink';
 import { priorityList } from 'settings/prioritys';
+import { parse, parseISO } from 'date-fns';
+import { useGetCategoriesQuery } from 'redux/events/events.api';
+import { useCategories } from 'helpers/hooks/useCategories';
 
 interface IProps {
   inputValue?: TInputSchema;
@@ -31,11 +34,28 @@ const initialValues: TInputSchema = {
 
 export const AppForm = ({ inputValue }: IProps) => {
   // console.log('inputValues', inputValue);
+  const { categories } = useCategories();
 
   const handlerSubmit = (formValues: TInputSchema, actions: any) => {
     console.log('formValues', formValues);
 
-    actions.resetForm();
+    // console.log(
+    //   'date+time parse:',
+    //   parse(
+    //     `${formValues.date}:${formValues.time}`,
+    //     'yyyy-MM-dd:HH:mm',
+    //     new Date()
+    //   )
+    // );
+
+    const eventDate = parse(
+      `${formValues.date}:${formValues.time}`,
+      'yyyy-MM-dd:HH:mm',
+      new Date()
+    );
+    const payload = {};
+
+    // actions.resetForm();
     actions.setSubmitting(false);
   };
 
@@ -46,6 +66,7 @@ export const AppForm = ({ inputValue }: IProps) => {
       validationSchema={formInputSchema}
     >
       {(formik: FormikProps<TInputSchema>) => {
+        console.log(formik.errors);
         return (
           <>
             <BackLink to="/" />
@@ -74,16 +95,30 @@ export const AppForm = ({ inputValue }: IProps) => {
                   name="location"
                   placeholder="location"
                   label="Location"
-                  id="location"
                 />
 
                 <SelectField
                   name="category"
                   placeholder="Select category"
                   label="Category"
+                  options={categories}
+                  setDefaultValue
+                />
+
+                <TextField
+                  type="text"
+                  name="image"
+                  placeholder="Select picture"
+                  label="Add picture"
+                  disabled
+                />
+
+                <SelectField
+                  name="priority"
+                  placeholder="Select priority"
+                  label="Priority"
                   options={priorityList}
                   readOnly
-                  setDefaultValue
                 />
 
                 <Button type="submit" variant="primary">
