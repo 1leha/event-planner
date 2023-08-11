@@ -1,11 +1,15 @@
 import styled from 'styled-components';
 import { IInputUI } from 'helpers/interfaces/inputs';
 
-export const Label = styled.label`
+interface IComponent extends IInputUI {
+  disabled?: boolean;
+}
+
+export const Label = styled.label<IComponent>`
   margin-top: 0;
   margin-bottom: ${p => p.theme.space[3]}px;
 
-  color: ${p => p.theme.colors.accent};
+  color: ${p => (p.disabled ? p.theme.colors.disabled : p.theme.colors.accent)};
 
   font-family: ${p => p.theme.fonts.primary};
   font-size: ${p => p.theme.fontSizes.m};
@@ -30,9 +34,12 @@ export const Input = styled.input`
 
   border: none;
   outline: none;
+  &:disabled {
+    background-color: ${p => p.theme.colors.white};
+  }
 `;
 
-export const IconButton = styled.button<IInputUI>`
+export const IconButton = styled.button<IComponent>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,6 +48,8 @@ export const IconButton = styled.button<IInputUI>`
 
   color: ${p =>
     p.error === 'true' ? p.theme.colors.error : p.theme.colors.accent};
+  color: ${p => (p.disabled ? p.theme.colors.disabled : p.theme.colors.accent)};
+
   background-color: transparent;
 
   outline: none;
@@ -51,11 +60,11 @@ export const IconButton = styled.button<IInputUI>`
   border-radius: ${p => p.theme.radii.round};
 
   &:hover {
-    background-color: ${p => p.theme.colors.hoverSecondary};
+    background-color: ${p => !p.disabled && p.theme.colors.hoverSecondary};
   }
 `;
 
-export const InputWrapper = styled.div<IInputUI>`
+export const InputWrapper = styled.div<IComponent>`
   display: flex;
   gap: ${p => p.theme.space[5]}px;
   justify-content: space-between;
@@ -71,9 +80,11 @@ export const InputWrapper = styled.div<IInputUI>`
   border: ${p => p.theme.borders.normal};
   border-radius: ${p => p.theme.radii.textField};
 
-  border-color: ${p =>
-    p.error === 'true' ? p.theme.colors.error : p.theme.colors.accent};
+  /* border-color: ${p =>
+    p.error === 'true' ? p.theme.colors.error : p.theme.colors.accent}; */
 
+  border-color: ${p =>
+    p.disabled ? p.theme.colors.disabled : p.theme.colors.accent};
   background-color: ${p => p.theme.colors.white};
 `;
 

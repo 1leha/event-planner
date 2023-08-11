@@ -23,6 +23,7 @@ export const theme: ITheme = {
     low: '#6BD475',
     text: '#3F3F3F',
     divider: '#ACA7C3',
+    disabled: '#ACA7C3',
     white: '#FFFFFF',
     placeholder: '#888888',
   },
