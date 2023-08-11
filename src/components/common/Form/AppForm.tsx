@@ -10,8 +10,9 @@ import { MultilinedField } from '../MultilinedField';
 import { TimeField } from '../TimeField';
 import { DateField } from '../DateField';
 import { SelectField } from '../SelectField';
-
-const mockList = ['high', 'medium', 'low'];
+import { Link } from 'react-router-dom';
+import { BackLink } from '../BackLink';
+import { priorityList } from 'settings/prioritys';
 
 interface IProps {
   inputValue?: TInputSchema;
@@ -32,10 +33,9 @@ export const AppForm = ({ inputValue }: IProps) => {
   // console.log('inputValues', inputValue);
 
   const handlerSubmit = (formValues: TInputSchema, actions: any) => {
-    // console.log('formValues', formValues);
+    console.log('formValues', formValues);
 
     actions.resetForm();
-
     actions.setSubmitting(false);
   };
 
@@ -47,44 +47,51 @@ export const AppForm = ({ inputValue }: IProps) => {
     >
       {(formik: FormikProps<TInputSchema>) => {
         return (
-          <Form>
-            <SC.Wrapper>
-              <SelectField
-                type="text"
-                name="category"
-                placeholder="Select category"
-                label="Category"
-                options={mockList}
-                readOnly
-                // setDefaultValue
-              />
+          <>
+            <BackLink to="/" />
+            <SC.Title>Create new event </SC.Title>
+            <SC.Form>
+              <SC.Wrapper>
+                <TextField
+                  type="text"
+                  name="title"
+                  placeholder="Meet someone..."
+                  label="Title"
+                />
 
-              <TextField
-                type="text"
-                name="title"
-                placeholder="title"
-                label="title"
-              />
+                <MultilinedField
+                  name="description"
+                  placeholder="Discuss something..."
+                  label="Description"
+                />
 
-              <MultilinedField
-                name="description"
-                // placeholder="Description"
-                label="Description"
-              />
-              <DateField name="date" />
-              <TimeField name="time" />
-              <TextField
-                type="text"
-                name="location"
-                placeholder="location"
-                label="Location"
-                id="location"
-              />
-              <Button type="submit" variant="primary">
-                Add event
-              </Button>
-            </SC.Wrapper>
-          </Form>
+                <DateField name="date" />
+
+                <TimeField name="time" />
+
+                <TextField
+                  type="text"
+                  name="location"
+                  placeholder="location"
+                  label="Location"
+                  id="location"
+                />
+
+                <SelectField
+                  name="category"
+                  placeholder="Select category"
+                  label="Category"
+                  options={priorityList}
+                  readOnly
+                  setDefaultValue
+                />
+
+                <Button type="submit" variant="primary">
+                  {inputValue ? 'Edit event' : 'Add event'}
+                </Button>
+              </SC.Wrapper>
+            </SC.Form>
+          </>
         );
       }}
     </Formik>

@@ -37,8 +37,9 @@ export const theme: ITheme = {
     s: '14px',
     m: '16px',
     l: '20px',
-    xl: '26px',
-    xxl: '40px',
+    xl: '24px',
+    xxl: '26px',
+    xxxl: '40px',
   },
 
   fontWeights: {
@@ -84,6 +85,7 @@ export const theme: ITheme = {
     category: '8px',
     image: '8px',
     textField: '8px',
+    form: '8px',
     searchField: '10px',
     round: '50%',
   },

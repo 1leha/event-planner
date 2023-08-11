@@ -12,21 +12,14 @@ export const LangSelector = ({ options, ...props }: ILangUI): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
   const [value, setValue] = useState<string>(defaultValue);
 
-  const { name } = props;
-
   const handlerToggleOptions = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <SC.Wrapper>
+    <SC.Wrapper onClick={handlerToggleOptions}>
       <SC.InputWrapper>
-        <SC.Input
-          {...props}
-          value={value}
-          readOnly={props.readOnly}
-          onClick={props.readOnly ? handlerToggleOptions : () => {}}
-        />
+        <SC.Input {...props} value={value} />
         {
           <SC.IconButton isopen={String(isOpen)} onClick={handlerToggleOptions}>
             <SVG.CevronTextFieldIcon />
