@@ -40,7 +40,8 @@ export const theme: ITheme = {
     l: '20px',
     xl: '24px',
     xxl: '26px',
-    xxxl: '40px',
+    xxxl: '32px',
+    xxxxl: '40px',
   },
 
   fontWeights: {
@@ -95,7 +96,7 @@ export const theme: ITheme = {
     standart: `2px 4px 9px 0px rgba(166, 141, 174, 0.28)`,
   },
 
-  space: [0, 2, 4, 8, 10, 12, 16, 20, 22, 24, 28, 32, 36, 40, 64, 128, 256],
+  space: [0, 2, 4, 8, 10, 12, 16, 20, 22, 24, 28, 32, 36, 40, 42, 60, 128, 256],
 
   sizes: {
     wholeHeight: '100vh',

@@ -109,9 +109,9 @@ export const AppForm = ({ inputValue }: IProps) => {
                   label="Description"
                 />
 
-                <DateField name="date" />
+                <DateField name="date" label="Select date" />
 
-                <TimeField name="time" />
+                <TimeField name="time" label="Select time" />
 
                 <TextField
                   type="text"
@@ -143,11 +143,11 @@ export const AppForm = ({ inputValue }: IProps) => {
                   options={priorityList}
                   readOnly
                 />
-
-                <Button type="submit" variant="primary">
-                  {inputValue ? 'Edit event' : 'Add event'}
-                </Button>
               </SC.Wrapper>
+
+              <SC.Button type="submit" variant="primary">
+                {inputValue ? 'Edit event' : 'Add event'}
+              </SC.Button>
             </SC.Form>
           </>
         );
