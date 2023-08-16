@@ -2,7 +2,6 @@ import { toUpperFirstLetter } from 'helpers/toUpperFirsLetter';
 import { useEffect, useRef, useState } from 'react';
 
 import * as SC from './Options.styled';
-import { async } from 'q';
 
 interface IProps {
   options: string[] | [];

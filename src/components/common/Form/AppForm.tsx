@@ -14,7 +14,7 @@ import { BackLink } from '../BackLink';
 import { priorityList } from 'settings/prioritys';
 import { parse } from 'date-fns';
 import { useCategories } from 'helpers/hooks/useCategories';
-import { useDateTime } from 'helpers/hooks/useDateTime';
+// import { useDateTime } from 'helpers/hooks/useDateTime';
 
 interface IProps {
   inputValue?: TInputSchema;
@@ -34,10 +34,21 @@ const initialValues: TInputSchema = {
 export const AppForm = ({ inputValue }: IProps) => {
   // console.log('inputValues', inputValue);
   const { categories } = useCategories();
-  const { currentTime, currentDate } = useDateTime();
+  // const { currentTime, currentDate } = useDateTime();
 
   const handlerSubmit = (formValues: TInputSchema, actions: any) => {
-    console.log('formValues', formValues);
+    // console.log('formValues', formValues);
+
+    const {
+      title,
+      description,
+      date,
+      time,
+      location,
+      category,
+      image,
+      priority,
+    } = formValues;
 
     // console.log(
     //   'date+time parse:',
@@ -48,14 +59,19 @@ export const AppForm = ({ inputValue }: IProps) => {
     //   )
     // );
 
-    const eventDate = parse(
-      `${formValues.date}:${formValues.time}`,
-      'yyyy-MM-dd:HH:mm',
-      new Date()
-    );
-    const payload = {};
+    const eventDate = parse(`${date}:${time}`, 'yyyy-MM-dd:HH:mm', new Date());
+    const payload = {
+      title,
+      description,
+      startedAt: eventDate,
+      location,
+      category: category.toLowerCase(),
+      priority: priority.toLowerCase(),
+      image,
+    };
 
-    // actions.resetForm();
+    console.log('payload', payload);
+    actions.resetForm();
     actions.setSubmitting(false);
   };
 
