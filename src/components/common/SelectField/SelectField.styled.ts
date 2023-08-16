@@ -78,7 +78,11 @@ export const InputWrapper = styled.div<IInputUI>`
   border-radius: ${p => p.theme.radii.textField};
 
   border-color: ${p =>
-    p.error === 'true' ? p.theme.colors.error : p.theme.colors.accent};
+    p.error === 'true'
+      ? p.theme.colors.error
+      : p.disabled
+      ? p.theme.colors.disabled
+      : p.theme.colors.text};
 
   background-color: ${p => p.theme.colors.white};
 

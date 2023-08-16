@@ -81,11 +81,13 @@ export const InputWrapper = styled.div<IComponent>`
   border: ${p => p.theme.borders.normal};
   border-radius: ${p => p.theme.radii.textField};
 
-  /* border-color: ${p =>
-    p.error === 'true' ? p.theme.colors.error : p.theme.colors.accent}; */
-
   border-color: ${p =>
-    p.disabled ? p.theme.colors.disabled : p.theme.colors.accent};
+    p.error === 'true'
+      ? p.theme.colors.error
+      : p.disabled
+      ? p.theme.colors.disabled
+      : p.theme.colors.text};
+
   background-color: ${p => p.theme.colors.white};
 `;
 

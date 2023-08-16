@@ -6,7 +6,6 @@ interface IProps {
 
 export const Wrapper = styled.div<IProps>`
   width: 100%;
-  height: 168px;
 
   padding: ${p => p.theme.space[6]}px;
 
