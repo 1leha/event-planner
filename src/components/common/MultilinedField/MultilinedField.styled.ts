@@ -74,9 +74,12 @@ export const TextAreaWrapper = styled.div<IMultilinedUI>`
 
   border: ${p => p.theme.borders.normal};
   border-radius: ${p => p.theme.radii.textField};
-
   border-color: ${p =>
-    p.error === 'true' ? p.theme.colors.error : p.theme.colors.accent};
+    p.error === 'true'
+      ? p.theme.colors.error
+      : p.disabled
+      ? p.theme.colors.disabled
+      : p.theme.colors.text};
 
   background-color: ${p => p.theme.colors.white};
   box-sizing: border-box;
