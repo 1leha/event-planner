@@ -1,5 +1,26 @@
 import styled from 'styled-components';
 import { IInputUI, IMultilinedUI } from 'helpers/interfaces/inputs';
+import { breakPoint } from 'settings/breakpoints';
+
+export const Wrapper = styled.div<IInputUI>`
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  margin-bottom: ${p => p.theme.space[0]}px;
+
+  /* @media screen and (min-width: ${breakPoint.mobile}px) {
+  } */
+
+  @media screen and (min-width: ${breakPoint.tablet}px) {
+    width: 308px;
+  }
+
+  @media screen and (min-width: ${breakPoint.desktop}px) {
+    width: 372px;
+  }
+`;
 
 export const MultiLined = styled.textarea`
   width: 100%;
@@ -19,6 +40,8 @@ export const MultiLined = styled.textarea`
   outline: none;
 
   resize: none;
+
+  box-sizing: border-box;
 `;
 
 export const Label = styled.label`
@@ -40,6 +63,7 @@ export const TextAreaWrapper = styled.div<IMultilinedUI>`
   gap: ${p => p.theme.space[5]}px;
   justify-content: space-between;
   align-items: flex-start;
+  height: 156px;
 
   margin-bottom: ${p => p.theme.space[2]}px;
 
@@ -55,6 +79,7 @@ export const TextAreaWrapper = styled.div<IMultilinedUI>`
     p.error === 'true' ? p.theme.colors.error : p.theme.colors.accent};
 
   background-color: ${p => p.theme.colors.white};
+  box-sizing: border-box;
 `;
 
 export const IconButton = styled.button<IMultilinedUI>`
@@ -94,12 +119,4 @@ export const Error = styled.p<IInputUI>`
   line-height: ${p => p.theme.lineHeights.error};
   letter-spacing: ${p => p.theme.letterSpacings.label};
   text-align: right;
-`;
-
-export const Wrapper = styled.div<IInputUI>`
-  height: 180px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
 `;

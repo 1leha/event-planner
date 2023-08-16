@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import arrowDown from 'img/icons/chevron-text-field_colored.svg';
 import { IInputUI } from 'helpers/interfaces/inputs';
+import { breakPoint } from 'settings/breakpoints';
 
 export const Label = styled.label`
   margin-top: 0;
@@ -101,6 +102,17 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+  /* @media screen and (min-width: ${breakPoint.mobile}px) {
+  } */
+
+  @media screen and (min-width: ${breakPoint.tablet}px) {
+    width: 308px;
+  }
+
+  @media screen and (min-width: ${breakPoint.desktop}px) {
+    width: 372px;
+  }
 `;
 
 export const Error = styled.p<IInputUI>`
