@@ -14,6 +14,7 @@ import { BackLink } from '../BackLink';
 import { priorityList } from 'settings/prioritys';
 import { parse } from 'date-fns';
 import { useCategories } from 'helpers/hooks/useCategories';
+import { useAddEventMutation } from 'redux/events/events.api';
 // import { useDateTime } from 'helpers/hooks/useDateTime';
 
 interface IProps {
@@ -35,6 +36,8 @@ export const AppForm = ({ inputValue }: IProps) => {
   // console.log('inputValues', inputValue);
   const { categories } = useCategories();
   // const { currentTime, currentDate } = useDateTime();
+
+  const [addEvent, { isLoading }] = useAddEventMutation();
 
   const handlerSubmit = (formValues: TInputSchema, actions: any) => {
     // console.log('formValues', formValues);
@@ -71,6 +74,7 @@ export const AppForm = ({ inputValue }: IProps) => {
     };
 
     console.log('payload', payload);
+    addEvent(payload);
     actions.resetForm();
     actions.setSubmitting(false);
   };
@@ -85,6 +89,7 @@ export const AppForm = ({ inputValue }: IProps) => {
         // console.log(formik.errors);
         return (
           <>
+            {isLoading && <div>Loading....</div>}
             <BackLink to="/" />
             <SC.Title>
               {inputValue ? 'Edit event' : 'Create new event'}

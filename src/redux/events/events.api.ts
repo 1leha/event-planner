@@ -36,7 +36,17 @@ export const eventApi = createApi({
         response.map(el => el.category),
       providesTags: ['events'],
     }),
+
+    addEvent: builder.mutation<any, any>({
+      query: event => ({
+        method: 'POST',
+        url: `/events`,
+        body: event,
+      }),
+      invalidatesTags: ['events'],
+    }),
   }),
 });
 
-export const { useGetEventsQuery, useGetCategoriesQuery } = eventApi;
+export const { useGetEventsQuery, useGetCategoriesQuery, useAddEventMutation } =
+  eventApi;
