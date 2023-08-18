@@ -1,4 +1,5 @@
 import { useMediaQuery } from '@yamada-ui/use-media-query';
+import { EventCard } from 'components/EventCard';
 import { Button } from 'components/common/Button';
 import { Container } from 'components/common/Container';
 import { filterSearchParam } from 'helpers/filterSearchParam';
@@ -64,7 +65,7 @@ export const Main = () => {
 
         <ul>
           {data?.map((event: IEvents) => {
-            return <li key={event.id}>{event.title}</li>;
+            return <EventCard key={event.id} eventData={event} />;
           })}
         </ul>
       </Container>
