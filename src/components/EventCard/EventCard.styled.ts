@@ -1,3 +1,4 @@
+import { breakPoint } from 'settings/breakpoints';
 import { styled } from 'styled-components';
 
 interface IAdditionalInfoItem {
@@ -7,7 +8,7 @@ interface IAdditionalInfoItem {
 export const Card = styled.li`
   position: relative;
 
-  width: 272px;
+  width: 100%;
   height: 480px;
 
   box-shadow: ${p => p.theme.shadows.standart};
