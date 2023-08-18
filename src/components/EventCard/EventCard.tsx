@@ -26,8 +26,6 @@ export const EventCard = ({ eventData }: ICard) => {
   const navigate = useNavigate();
   const path = useLocation();
 
-  console.log('path', path);
-
   const eventDate = format(new Date(startedAt), 'dd.MM');
   const eventTime = format(new Date(startedAt), 'HH:mm');
 
