@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes } from 'react';
 
-type TVariant = 'primary' | 'seconary';
+type TVariant = 'primary' | 'secondary';
 type TSize = 'l' | 'm' | 's';
 
 export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {

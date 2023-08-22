@@ -16,7 +16,7 @@ export const theme: ITheme = {
     bg: '#FEFCFF',
     accent: '#7B61FF',
     hover: '#6243FF',
-    hoverSecondary: '#7B61FF20',
+    hoverSecondary: '#e5dfff',
     error: '#FF2B77',
     high: '#FF2B77',
     medium: '#E2A300',
