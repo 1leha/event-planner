@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { IButton } from './interface';
 
 export const Button = styled.button<IButton>`
-  min-width: ${p => (p.size === 'l' && p.icon ? '58px' : '')}px;
+  min-width: ${p => (p.size === 'l' && p.icon ? '56px' : '')}px;
   min-width: ${p => (p.width ? p.width + 'px' : '100%')};
 
   padding-top: ${p => {
@@ -137,14 +137,14 @@ export const Wrapper = styled.div`
   height: 22px;
 `;
 
-export const Icon = styled.div`
+export const Icon = styled.div<IButton>`
   display: flex;
   justify-content: center;
   align-items: center;
 
   padding: 0;
 
-  color: ${p => p.theme.colors.white};
+  color: ${p => p.variant === 'primary' && p.theme.colors.white};
   background-color: transparent;
 
   outline: none;
