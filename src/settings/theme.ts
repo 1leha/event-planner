@@ -24,6 +24,7 @@ export const theme: ITheme = {
     text: '#3F3F3F',
     divider: '#ACA7C3',
     disabled: '#ACA7C3',
+    dropDownItem: '#ACA7C3',
     thumbBG: '#ACA7C3',
     white: '#FFFFFF',
     placeholder: '#888888',

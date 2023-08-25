@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${p => p.theme.space[9]}px;
+  /* align-items: center; */
 
   margin-bottom: ${p => p.theme.space[13]}px;
 
@@ -27,7 +28,8 @@ export const Title = styled.h2`
 `;
 
 export const ButtonsWrapper = styled.div`
-  display: flex;
+  display: inline-flex;
   gap: ${p => p.theme.space[9]}px;
   justify-content: flex-end;
+  align-items: center;
 `;

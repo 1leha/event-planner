@@ -16,12 +16,13 @@ export const Wrapper = styled.div`
 
   box-shadow: ${p => p.theme.shadows.standart};
 
+  box-sizing: border-box;
   cursor: pointer;
 `;
 
 export const InputWrapper = styled.div<IInputUI>`
   display: flex;
-  gap: ${p => p.theme.space[5]}px;
+  gap: ${p => p.theme.space[2]}px;
   justify-content: space-between;
   align-items: center;
 
