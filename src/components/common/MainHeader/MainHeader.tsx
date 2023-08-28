@@ -16,10 +16,7 @@ const mockOptionsNoIcon = [
 ];
 
 export const MainHeader = () => {
-  const [tablet, desktop] = useMediaQuery([
-    '(min-width: 768px)',
-    '(max-width: 1320px)',
-  ]);
+  const [tablet] = useMediaQuery(['(min-width: 768px)', '(max-width: 1320px)']);
 
   const { data: categories, isError, isLoading } = useGetCategoriesQuery();
 
