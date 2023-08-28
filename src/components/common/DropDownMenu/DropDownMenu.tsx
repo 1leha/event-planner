@@ -40,8 +40,6 @@ export const DropDownMenu = ({
     ? toUpperFirstLetter(value?.name)
     : title;
 
-  console.log('value', value);
-
   return (
     <SC.Wrapper onClick={handlerToggleOptions} active={String(!!value?.name)}>
       <SC.InputWrapper>
