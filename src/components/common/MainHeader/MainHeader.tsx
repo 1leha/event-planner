@@ -20,7 +20,7 @@ export const MainHeader = () => {
 
   const { data: categories, isError, isLoading } = useGetCategoriesQuery();
 
-  // console.log('categories', categories);
+  console.log('categories', categories);
 
   return (
     <SC.Wrapper>

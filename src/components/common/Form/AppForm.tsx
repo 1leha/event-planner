@@ -1,5 +1,4 @@
 import { Formik, FormikProps } from 'formik';
-import { Button } from '../Button';
 import * as SC from './Form.styled';
 import {
   TInputSchema,
@@ -15,7 +14,6 @@ import { priorityList } from 'settings/prioritys';
 import { parse } from 'date-fns';
 import { useCategories } from 'helpers/hooks/useCategories';
 import { useAddEventMutation } from 'redux/events/events.api';
-// import { useDateTime } from 'helpers/hooks/useDateTime';
 
 interface IProps {
   inputValue?: TInputSchema;
@@ -34,14 +32,14 @@ const initialValues: TInputSchema = {
 
 export const AppForm = ({ inputValue }: IProps) => {
   // console.log('inputValues', inputValue);
-  const { categories } = useCategories();
+  const { categoriesData } = useCategories();
+  const categories = categoriesData.map(el => el.category);
   // const { currentTime, currentDate } = useDateTime();
+  console.log('categories', categories);
 
   const [addEvent, { isLoading }] = useAddEventMutation();
 
   const handlerSubmit = (formValues: TInputSchema, actions: any) => {
-    // console.log('formValues', formValues);
-
     const {
       title,
       description,
@@ -52,15 +50,6 @@ export const AppForm = ({ inputValue }: IProps) => {
       image,
       priority,
     } = formValues;
-
-    // console.log(
-    //   'date+time parse:',
-    //   parse(
-    //     `${formValues.date}:${formValues.time}`,
-    //     'yyyy-MM-dd:HH:mm',
-    //     new Date()
-    //   )
-    // );
 
     const eventDate = parse(`${date}:${time}`, 'yyyy-MM-dd:HH:mm', new Date());
     const payload = {
