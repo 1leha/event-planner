@@ -10,7 +10,7 @@ import { IOption } from 'helpers/interfaces/options';
 interface IProps {
   title: string;
   icon: JSX.Element;
-  options: IOption[] | [];
+  options: IOption[] | undefined;
   isOpen: boolean;
   iconOnLeftIfMobile?: boolean;
   activeItem: IOption | null;
@@ -18,6 +18,7 @@ interface IProps {
 
   setValue: (option: IOption) => void;
   onClose: () => void;
+  onReset: () => void;
 }
 
 export const Options = ({
@@ -30,6 +31,7 @@ export const Options = ({
   smallFirstLetterInOption,
   setValue,
   onClose,
+  onReset,
 }: IProps) => {
   const optionWindow = useRef(null);
 
@@ -84,7 +86,14 @@ export const Options = ({
       />
 
       <SC.OptionList isopen={String(isOpen)}>
-        {options.map(option => {
+        <OptionItem
+          key="all"
+          option={{ id: 99999, name: 'all' }}
+          activeItem={activeItem}
+          onClick={onReset}
+          smallFirstLetterInOption={smallFirstLetterInOption}
+        />
+        {options?.map(option => {
           return (
             <OptionItem
               key={option.id}

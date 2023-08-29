@@ -1,7 +1,9 @@
 import * as SC from './DropDownMenu.styled';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Options } from './Options';
 import { toUpperFirstLetter } from 'helpers/toUpperFirsLetter';
+import { useAppSearchParams } from 'helpers/hooks/useAppSearchParams';
+import { filterSearchParam } from 'helpers/filterSearchParam';
 
 interface IOption {
   id: number;
@@ -11,8 +13,9 @@ interface IOption {
 
 interface IProps {
   title: string;
+  name: string;
   icon: JSX.Element;
-  options: IOption[];
+  options: IOption[] | undefined;
   iconOnLeftIfMobile?: boolean;
   skipChangeTitle?: boolean | string;
   smallFirstLetterInOption?: boolean;
@@ -20,6 +23,7 @@ interface IProps {
 
 export const DropDownMenu = ({
   title,
+  name,
   icon,
   options,
   iconOnLeftIfMobile,
@@ -30,9 +34,38 @@ export const DropDownMenu = ({
   const [isOpen, setIsOpen] = useState(false);
   const [value, setValue] = useState<null | IOption>(null);
 
+  const { search, category, page, limit, order, sortBy, setSearchParams } =
+    useAppSearchParams();
+
   const handlerToggleOptions = () => {
     setIsOpen(!isOpen);
   };
+
+  const resetCategory = () => setValue(null);
+
+  useEffect(() => {
+    setSearchParams(
+      filterSearchParam({
+        search,
+        category,
+        page,
+        limit,
+        order,
+        sortBy,
+        [name]: value?.name ? value?.name : '',
+      })
+    );
+  }, [
+    setSearchParams,
+    value,
+    name,
+    search,
+    category,
+    page,
+    limit,
+    order,
+    sortBy,
+  ]);
 
   const dropDounMenuTitle = skipChangeTitle
     ? title
@@ -54,6 +87,7 @@ export const DropDownMenu = ({
           isOpen={isOpen}
           setValue={setValue}
           onClose={handlerToggleOptions}
+          onReset={resetCategory}
           iconOnLeftIfMobile={iconOnLeftIfMobile}
           activeItem={value}
           smallFirstLetterInOption={smallFirstLetterInOption}
