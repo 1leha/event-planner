@@ -25,10 +25,7 @@ export const Wrapper = styled.div<IProps>`
 
   box-sizing: border-box;
 
-  overflow-y: auto;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  overflow-y: none;
 
   z-index: 100;
 
@@ -45,7 +42,7 @@ export const OptionList = styled.ul<IProps>`
 
   list-style: none;
   width: 100%;
-  height: fit-content;
+  height: 234px;
 
   padding: ${p => p.theme.space[0]}px;
   margin: ${p => p.theme.space[0]}px;
@@ -53,6 +50,12 @@ export const OptionList = styled.ul<IProps>`
   color: ${p => p.theme.colors.text};
 
   box-sizing: border-box;
+
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const OptionItem = styled.li`
