@@ -1,6 +1,5 @@
 import { useMediaQuery } from '@yamada-ui/use-media-query';
 import * as SC from './OptionsHeader.styled';
-import { IOption } from 'helpers/interfaces/options';
 
 interface IProps {
   title: string;

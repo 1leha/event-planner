@@ -51,7 +51,7 @@ export const Options = ({ options, isOpen, setValue, onClose }: IProps) => {
           return (
             <SC.OptionItem
               key={option}
-              onClick={() => handlerSelectOption(option)}
+              onClick={() => handlerSelectOption(String(option))}
             >
               {toUpperFirstLetter(option)}
             </SC.OptionItem>
