@@ -8,6 +8,8 @@ import { filterSearchParam } from 'helpers/filterSearchParam';
 interface IOption {
   id: number;
   name: string;
+  param?: string;
+  order?: string;
   icon?: JSX.Element;
 }
 
@@ -34,14 +36,37 @@ export const DropDownMenu = ({
   const [isOpen, setIsOpen] = useState(false);
   const [value, setValue] = useState<null | IOption>(null);
 
-  const { search, category, page, limit, order, sortBy, setSearchParams } =
-    useAppSearchParams();
+  const {
+    search,
+    category,
+    page,
+    limit,
+    order,
+    sortBy,
+    searchParams,
+    setSearchParams,
+  } = useAppSearchParams();
+
+  const currentitem = searchParams.get(name);
 
   const handlerToggleOptions = () => {
     setIsOpen(!isOpen);
   };
 
-  const resetCategory = () => setValue(null);
+  const resetCategory = () => {
+    setValue(null);
+    setSearchParams(
+      filterSearchParam({
+        search,
+        category,
+        page,
+        limit,
+        order: '',
+        sortBy,
+        [name]: '',
+      })
+    );
+  };
 
   useEffect(() => {
     setSearchParams(
@@ -50,9 +75,15 @@ export const DropDownMenu = ({
         category,
         page,
         limit,
-        order,
+        order: value?.order ? value?.order : '',
         sortBy,
-        [name]: value?.name ? value?.name : '',
+        [name]: value?.param
+          ? value?.param
+            ? value?.param
+            : ''
+          : value?.name
+          ? value?.name
+          : '',
       })
     );
   }, [
@@ -69,12 +100,12 @@ export const DropDownMenu = ({
 
   const dropDounMenuTitle = skipChangeTitle
     ? title
-    : value?.name
-    ? toUpperFirstLetter(value?.name)
+    : currentitem
+    ? toUpperFirstLetter(currentitem)
     : title;
 
   return (
-    <SC.Wrapper onClick={handlerToggleOptions} active={String(!!value?.name)}>
+    <SC.Wrapper onClick={handlerToggleOptions} active={String(!!currentitem)}>
       <SC.InputWrapper>
         <SC.ItemName {...props}>{dropDounMenuTitle}</SC.ItemName>
         {<SC.Icon>{icon}</SC.Icon>}
