@@ -14,6 +14,7 @@ import { priorityList } from 'settings/prioritys';
 import { parse } from 'date-fns';
 import { useCategories } from 'helpers/hooks/useCategories';
 import { useAddEventMutation } from 'redux/events/events.api';
+import { useNavigate } from 'react-router-dom';
 
 interface IProps {
   inputValue?: TInputSchema;
@@ -31,11 +32,11 @@ const initialValues: TInputSchema = {
 };
 
 export const AppForm = ({ inputValue }: IProps) => {
-  // console.log('inputValues', inputValue);
   const { categoriesData } = useCategories();
   const categories = categoriesData.map(el => el.category);
+  const navigate = useNavigate();
+
   // const { currentTime, currentDate } = useDateTime();
-  console.log('categories', categories);
 
   const [addEvent, { isLoading }] = useAddEventMutation();
 
@@ -62,10 +63,11 @@ export const AppForm = ({ inputValue }: IProps) => {
       image,
     };
 
-    console.log('payload', payload);
+    // console.log('payload', payload);
     addEvent(payload);
     actions.resetForm();
     actions.setSubmitting(false);
+    navigate('/', { replace: true });
   };
 
   return (
@@ -114,7 +116,7 @@ export const AppForm = ({ inputValue }: IProps) => {
                   placeholder="Select category"
                   label="Category"
                   options={categories}
-                  setDefaultValue
+                  // setDefaultValue
                 />
 
                 <TextField
