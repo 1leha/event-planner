@@ -55,6 +55,8 @@ export const Button = styled.button<IButton>`
     }
   }}px;
 
+  font-family: ${p => p.theme.fonts.primary};
+
   font-size: ${p => {
     switch (p.size) {
       case 's':
