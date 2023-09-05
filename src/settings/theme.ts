@@ -25,6 +25,7 @@ export const theme: ITheme = {
     divider: '#ACA7C3',
     disabled: '#ACA7C3',
     dropDownItem: '#ACA7C3',
+    paggination: '#ACA7C3',
     thumbBG: '#ACA7C3',
     white: '#FFFFFF',
     placeholder: '#888888',
@@ -101,7 +102,9 @@ export const theme: ITheme = {
     standart: `2px 4px 9px 0px rgba(166, 141, 174, 0.28)`,
   },
 
-  space: [0, 2, 4, 8, 10, 12, 16, 20, 22, 24, 28, 32, 36, 40, 42, 60, 128, 256],
+  space: [
+    0, 2, 4, 8, 10, 12, 16, 20, 22, 24, 28, 32, 36, 40, 42, 60, 64, 128, 256,
+  ],
 
   sizes: {
     wholeHeight: '100vh',

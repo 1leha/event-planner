@@ -11,26 +11,45 @@ import {
   useGetEventsQuery,
 } from 'redux/events/events.api';
 import * as SC from './EventGrid.styled';
+import { PaginationBar } from 'components/Pagination/PaginationBar';
+import { breakPoint } from 'settings/breakpoints';
+import { useTotalPages } from 'helpers/hooks/useTotalPages';
 
 export const EventGrid = () => {
-  const [tablet] = useMediaQuery(['(max-width: 1320px)']);
+  const [tablet] = useMediaQuery([`(max-width: ${breakPoint.desktop}px)`]);
+  // console.log('tablet', tablet);
+
   const initSearch = {
-    page: '1',
     limit: tablet ? '6' : '8',
   };
-  const { search, category, order, sortBy, searchParams, setSearchParams } =
-    useAppSearchParams();
+  const {
+    search,
+    category,
+    page,
+    order,
+    sortBy,
+    searchParams,
+    setSearchParams,
+  } = useAppSearchParams();
 
   const { data, isLoading, refetch } = useGetEventsQuery(
     searchParams.toString()
   );
+
+  const { totalPages } = useTotalPages({
+    category,
+    search,
+    itemsPerPage: Number(initSearch.limit),
+  });
+
+  const currentPage = totalPages < Number(page) ? totalPages : page;
 
   useEffect(() => {
     setSearchParams(
       filterSearchParam({
         search,
         category,
-        page: initSearch.page,
+        page: currentPage,
         limit: initSearch.limit,
         order,
         sortBy,
@@ -39,11 +58,12 @@ export const EventGrid = () => {
   }, [
     category,
     initSearch.limit,
-    initSearch.page,
     search,
     setSearchParams,
     order,
     sortBy,
+    page,
+    currentPage,
   ]);
 
   return (
@@ -53,6 +73,7 @@ export const EventGrid = () => {
           return <EventCard key={event.id} eventData={event} />;
         })}
       </SC.EventsGrid>
+      <PaginationBar itemsPerPage={Number(initSearch.limit)} />
     </Container>
   );
 };

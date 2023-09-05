@@ -37,6 +37,28 @@ export const eventApi = createApi({
       providesTags: ['events'],
     }),
 
+    getEventsLength: builder.query<number, string | void | null>({
+      query: params => ({
+        method: 'GET',
+        url: `/events?${params}`,
+      }),
+      transformResponse: (response: IEvents[]): number => {
+        return response.length;
+      },
+      providesTags: ['events'],
+    }),
+
+    // getEventsLength: builder.query<number, string | void | null>({
+    //   query: category => ({
+    //     method: 'GET',
+    //     url: `/events?category=${category ? category : ''}`,
+    //   }),
+    //   transformResponse: (response: IEvents[]): number => {
+    //     return response.length;
+    //   },
+    //   providesTags: ['events'],
+    // }),
+
     addEvent: builder.mutation<any, any>({
       query: event => ({
         method: 'POST',
@@ -48,5 +70,9 @@ export const eventApi = createApi({
   }),
 });
 
-export const { useGetEventsQuery, useGetCategoriesQuery, useAddEventMutation } =
-  eventApi;
+export const {
+  useGetEventsQuery,
+  useGetCategoriesQuery,
+  useAddEventMutation,
+  useGetEventsLengthQuery,
+} = eventApi;

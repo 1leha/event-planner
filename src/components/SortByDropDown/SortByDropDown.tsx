@@ -5,8 +5,6 @@ import { sortCriteria } from 'settings/sortCriteria';
 
 const sortOptions = getSortOptions(sortCriteria);
 
-console.log('sortOptions', sortOptions);
-
 export const SortByDropDown = () => {
   return (
     <DropDownMenu

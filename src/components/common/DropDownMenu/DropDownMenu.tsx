@@ -73,7 +73,7 @@ export const DropDownMenu = ({
       filterSearchParam({
         search,
         category,
-        page,
+        page: 1,
         limit,
         order: value?.order ? value?.order : '',
         sortBy,
