@@ -16,6 +16,7 @@
     "@yamada-ui/use-media-query": "^0.1.24",
     "date-fns": "^2.30.0",
     "formik": "^2.4.3",
+    "rc-pagination": "^3.6.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-loader-spinner": "^5.3.4",
