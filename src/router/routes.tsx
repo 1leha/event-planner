@@ -12,7 +12,7 @@ export const routes = [
     children: [
       { path: '/', element: <Main /> },
       { path: 'create', element: <CreateEvent /> },
-      { path: 'edit', element: <EditEvent /> },
+      { path: ':eventId/edit', element: <EditEvent /> },
       { path: ':eventId', element: <EventDetails /> },
     ],
   },

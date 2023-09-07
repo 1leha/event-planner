@@ -14,9 +14,9 @@ export const TimeField = (props: any): JSX.Element => {
 
   useEffect(() => {
     if (!touched) {
-      setValue(currentTime);
+      setValue(value ?? currentTime);
     }
-  }, [currentTime, setValue, touched]);
+  }, [currentTime, setValue, touched, value]);
 
   const isFieldError = !value || (error && touched);
 

@@ -12,17 +12,21 @@ import { SelectField } from '../SelectField';
 import { priorityList } from 'settings/prioritys';
 import { parse } from 'date-fns';
 import { useCategories } from 'helpers/hooks/useCategories';
-import { useAddEventMutation } from 'redux/events/events.api';
+import {
+  useAddEventMutation,
+  useEditEventMutation,
+} from 'redux/events/events.api';
 import { useNavigate } from 'react-router-dom';
 
 interface IProps {
+  id?: string;
   inputValue?: TInputSchema;
 }
 
 const initialValues: TInputSchema = {
   title: '',
   description: '',
-  date: '',
+  date: '2023-05-13',
   time: '',
   location: '',
   category: '',
@@ -30,7 +34,7 @@ const initialValues: TInputSchema = {
   priority: '',
 };
 
-export const AppForm = ({ inputValue }: IProps) => {
+export const AppForm = ({ id, inputValue }: IProps) => {
   const { categoriesData } = useCategories();
   const categories = categoriesData.map(el => el.category);
   const navigate = useNavigate();
@@ -38,6 +42,7 @@ export const AppForm = ({ inputValue }: IProps) => {
   // const { currentTime, currentDate } = useDateTime();
 
   const [addEvent, { isLoading }] = useAddEventMutation();
+  const [editEvent, { isLoading: isEditLoading }] = useEditEventMutation();
 
   const handlerSubmit = (formValues: TInputSchema, actions: any) => {
     const {
@@ -62,8 +67,12 @@ export const AppForm = ({ inputValue }: IProps) => {
       image,
     };
 
-    // console.log('payload', payload);
-    addEvent(payload);
+    console.log('payload', payload);
+    if (id) {
+      editEvent({ id, data: payload });
+    } else {
+      addEvent(payload);
+    }
     actions.resetForm();
     actions.setSubmitting(false);
     navigate('/', { replace: true });
