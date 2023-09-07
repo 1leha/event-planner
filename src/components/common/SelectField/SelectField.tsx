@@ -50,14 +50,11 @@ export const SelectField = ({
           {...field}
           {...props}
           readOnly={props.readOnly}
-          onClick={
-            props.readOnly || options.length > 0
-              ? handlerToggleOptions
-              : () => {}
-          }
+          onClick={handlerToggleOptions}
         />
         {
           <SC.IconButton
+            type="button"
             isopen={String(isOpen)}
             error={String(isFieldError)}
             onClick={handlerToggleOptions}

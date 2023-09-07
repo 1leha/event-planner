@@ -22,8 +22,9 @@ export const TextField = (props: any): JSX.Element => {
         <SC.Input {...field} {...props} autoComplete="off" />
         {
           <SC.IconButton
+            type="button"
             error={String(isFieldError)}
-            onClick={disabled ? () => {} : () => setValue('')}
+            onClick={() => setValue('')}
             disabled={disabled}
           >
             <SVG.CrossIcon />

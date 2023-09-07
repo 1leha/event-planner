@@ -13,9 +13,9 @@ export const DateField = (props: any): JSX.Element => {
 
   useEffect(() => {
     if (!touched) {
-      setValue(currentDate);
+      setValue(value ?? currentDate);
     }
-  }, [currentDate, setValue, touched]);
+  }, [currentDate, setValue, touched, value]);
 
   const isFieldError = !value || (error && touched);
 
@@ -29,6 +29,3 @@ export const DateField = (props: any): JSX.Element => {
     </SC.Wrapper>
   );
 };
-function useEffec(arg0: () => void, arg1: never[]) {
-  throw new Error('Function not implemented.');
-}

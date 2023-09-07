@@ -37,6 +37,7 @@ export const Input = styled.input`
   outline: none;
   &:disabled {
     background-color: ${p => p.theme.colors.white};
+    color: ${p => p.theme.colors.disabled};
   }
 `;
 
