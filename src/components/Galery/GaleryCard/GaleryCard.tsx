@@ -28,6 +28,10 @@ export const GaleryCard = () => {
     navigate('/', { replace: true });
   };
 
+  const editEventHandler = () => {
+    navigate('edit', { state: { cardData: data } });
+  };
+
   return (
     <SC.Card>
       <SC.Thumb>
@@ -49,7 +53,7 @@ export const GaleryCard = () => {
           <SC.Infoitem type="date">{`${eventDate} at ${eventTime}`}</SC.Infoitem>
         </SC.InfoWrapper>
         <SC.ButtonWrapper>
-          <Button size="s" width={mobile ? 108 : ''}>
+          <Button size="s" width={mobile ? 108 : ''} onClick={editEventHandler}>
             Edit
           </Button>
           <Button
