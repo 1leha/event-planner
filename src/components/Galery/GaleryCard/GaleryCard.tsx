@@ -2,20 +2,31 @@ import { Button } from 'components/common/Button';
 import * as SC from './GaleryCard.styled';
 import { useMediaQuery } from '@yamada-ui/use-media-query';
 import { breakPoint } from 'settings/breakpoints';
-import { useParams } from 'react-router';
-import { useGetEventbyIdQuery } from 'redux/events/events.api';
+import { useNavigate, useParams } from 'react-router';
+import {
+  useDeleteEventMutation,
+  useGetEventbyIdQuery,
+} from 'redux/events/events.api';
 import { format } from 'date-fns';
 
 export const GaleryCard = () => {
   const { eventId } = useParams();
+  const navigate = useNavigate();
+
   const { data, isError, isLoading, isSuccess } = useGetEventbyIdQuery(
     String(eventId)
   );
+  const [deleteEvent, { isLoading: isDeleting }] = useDeleteEventMutation();
 
   const [mobile] = useMediaQuery([`(max-width: ${breakPoint.tablet}px)`]);
 
   const eventDate = data ? format(new Date(data.startedAt), 'dd.MM') : '';
   const eventTime = data ? format(new Date(data.startedAt), 'HH:mm') : '';
+
+  const deleteEventHandler = () => {
+    deleteEvent(eventId);
+    navigate('/', { replace: true });
+  };
 
   return (
     <SC.Card>
@@ -41,7 +52,12 @@ export const GaleryCard = () => {
           <Button size="s" width={mobile ? 108 : ''}>
             Edit
           </Button>
-          <Button size="s" variant="primary" width={mobile ? 108 : ''}>
+          <Button
+            size="s"
+            variant="primary"
+            width={mobile ? 108 : ''}
+            onClick={deleteEventHandler}
+          >
             Delete event
           </Button>
         </SC.ButtonWrapper>
