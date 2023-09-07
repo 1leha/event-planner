@@ -1,3 +1,4 @@
+import { BackLink } from 'components/common/BackLink';
 import { AppForm } from 'components/common/Form';
 
 export const CreateEvent = () => {
@@ -14,6 +15,7 @@ export const CreateEvent = () => {
 
   return (
     <div>
+      <BackLink to="/" />
       <AppForm />
     </div>
   );

@@ -48,16 +48,13 @@ export const eventApi = createApi({
       providesTags: ['events'],
     }),
 
-    // getEventsLength: builder.query<number, string | void | null>({
-    //   query: category => ({
-    //     method: 'GET',
-    //     url: `/events?category=${category ? category : ''}`,
-    //   }),
-    //   transformResponse: (response: IEvents[]): number => {
-    //     return response.length;
-    //   },
-    //   providesTags: ['events'],
-    // }),
+    getEventbyId: builder.query<IEvents, string | void | null>({
+      query: (id: string) => ({
+        method: 'GET',
+        url: `/events/${id}`,
+      }),
+      providesTags: ['events'],
+    }),
 
     addEvent: builder.mutation<any, any>({
       query: event => ({
@@ -75,4 +72,5 @@ export const {
   useGetCategoriesQuery,
   useAddEventMutation,
   useGetEventsLengthQuery,
+  useGetEventbyIdQuery,
 } = eventApi;

@@ -20,7 +20,6 @@ export const EventCard = ({ eventData }: ICard) => {
     startedAt,
     category,
     priority,
-    // createdAt,
   } = eventData;
 
   const navigate = useNavigate();
@@ -61,7 +60,7 @@ export const EventCard = ({ eventData }: ICard) => {
               size="m"
               variant="primary"
               width={114}
-              onClick={() => navigate(id, { state: path })}
+              onClick={() => navigate(id, { state: { from: path } })}
             >
               More Info
             </Button>

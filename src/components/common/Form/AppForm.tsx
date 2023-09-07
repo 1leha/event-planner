@@ -9,7 +9,6 @@ import { MultilinedField } from '../MultilinedField';
 import { TimeField } from '../TimeField';
 import { DateField } from '../DateField';
 import { SelectField } from '../SelectField';
-import { BackLink } from '../BackLink';
 import { priorityList } from 'settings/prioritys';
 import { parse } from 'date-fns';
 import { useCategories } from 'helpers/hooks/useCategories';
@@ -81,7 +80,6 @@ export const AppForm = ({ inputValue }: IProps) => {
         return (
           <>
             {isLoading && <div>Loading....</div>}
-            <BackLink to="/" />
             <SC.Title>
               {inputValue ? 'Edit event' : 'Create new event'}
             </SC.Title>

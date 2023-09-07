@@ -3,8 +3,15 @@ import styled from 'styled-components';
 import { IButton } from './interface';
 
 export const Button = styled.button<IButton>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  display: block;
+  box-sizing: border-box;
+
   min-width: ${p => (p.size === 'l' && p.icon ? '56px' : '')}px;
-  min-width: ${p => (p.width ? p.width + 'px' : '100%')};
+  min-width: ${p => (p.width ? p.width + 'px' : '')};
 
   padding-top: ${p => {
     switch (p.size) {
@@ -18,6 +25,7 @@ export const Button = styled.button<IButton>`
         return p.theme.space[6];
     }
   }}px;
+
   padding-bottom: ${p => {
     switch (p.size) {
       case 's':
@@ -30,25 +38,27 @@ export const Button = styled.button<IButton>`
         return p.theme.space[6];
     }
   }}px;
+
   padding-left: ${p => {
     switch (p.size) {
       case 's':
-        return p.theme.space[6];
+        return p.theme.space[5];
 
       case 'm':
-        return p.theme.space[8];
+        return p.theme.space[6];
 
       default:
         return p.theme.space[6];
     }
   }}px;
+
   padding-right: ${p => {
     switch (p.size) {
       case 's':
-        return p.theme.space[6];
+        return p.theme.space[5];
 
       case 'm':
-        return p.theme.space[8];
+        return p.theme.space[6];
 
       default:
         return p.theme.space[6];
@@ -83,6 +93,7 @@ export const Button = styled.button<IButton>`
     }
   }};
   text-align: center;
+  font-style: normal;
 
   color: ${p =>
     p.variant === 'primary'
@@ -135,8 +146,10 @@ export const Wrapper = styled.div`
   display: flex;
   gap: ${p => p.theme.space[6]}px;
   justify-content: center;
-  align-items: stretch;
+  align-items: center;
   height: 22px;
+
+  box-sizing: border-box;
 `;
 
 export const Icon = styled.div<IButton>`
