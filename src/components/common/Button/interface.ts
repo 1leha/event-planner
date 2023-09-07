@@ -7,6 +7,6 @@ export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: any;
   size?: TSize;
   variant?: TVariant;
-  width?: number;
+  width?: number | string;
   icon?: JSX.Element;
 }

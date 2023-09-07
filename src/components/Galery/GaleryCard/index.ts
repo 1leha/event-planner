@@ -1,0 +1,1 @@
+export { GaleryCard } from './GaleryCard';

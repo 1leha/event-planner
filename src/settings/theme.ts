@@ -76,7 +76,7 @@ export const theme: ITheme = {
 
     smallButton: 1.33,
     middleButton: 1.42,
-    largeButton: 1.4,
+    largeButton: 1,
 
     searchField: 1.4,
 
@@ -88,6 +88,7 @@ export const theme: ITheme = {
   radii: {
     none: 'none',
     card: '12px',
+    galleryCard: '12px',
     button: '8px',
     buttonSmall: '4px',
     category: '8px',
