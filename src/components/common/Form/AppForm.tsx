@@ -67,7 +67,6 @@ export const AppForm = ({ id, inputValue }: IProps) => {
       image,
     };
 
-    console.log('payload', payload);
     if (id) {
       editEvent({ id, data: payload });
     } else {
