@@ -3,13 +3,9 @@ import { EventCard } from 'components/EventCard';
 import { Container } from 'components/common/Container';
 import { filterSearchParam } from 'helpers/filterSearchParam';
 import { useAppSearchParams } from 'helpers/hooks/useAppSearchParams';
-// import { useCategories } from 'helpers/hooks/useCategories';
 import { IEvents } from 'helpers/interfaces/events';
 import { useEffect } from 'react';
-import {
-  //   useGetCategoriesQuery,
-  useGetEventsQuery,
-} from 'redux/events/events.api';
+import { useGetEventsQuery } from 'redux/events/events.api';
 import * as SC from './EventGrid.styled';
 import { PaginationBar } from 'components/Pagination/PaginationBar';
 import { breakPoint } from 'settings/breakpoints';
@@ -72,7 +68,7 @@ export const EventGrid = () => {
             return <EventCard key={event.id} eventData={event} />;
           })
           .sort((a, b) => {
-            if (!!sortBy) {
+            if (Boolean(sortBy)) {
               return 0;
             }
 
