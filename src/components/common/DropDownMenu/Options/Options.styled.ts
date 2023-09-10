@@ -8,7 +8,7 @@ interface IProps {
 
 export const Wrapper = styled.div<IProps>`
   width: 100%;
-  max-height: 294px;
+  /* max-height: 350px; */
   min-width: 158px;
 
   position: absolute;
@@ -42,7 +42,7 @@ export const OptionList = styled.ul<IProps>`
 
   list-style: none;
   width: 100%;
-  height: 234px;
+  max-height: 350px;
 
   padding: ${p => p.theme.space[0]}px;
   margin: ${p => p.theme.space[0]}px;

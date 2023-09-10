@@ -41,8 +41,6 @@ export const Options = ({
   const isLeftConer = String(!!mobile && iconOnLeftIfMobile);
 
   const handlerSelectOption = (option: IOption) => {
-    // console.log('handlerSelectOption -- option', option);
-
     setValue(option);
     setOptionIsOpened(false);
 
@@ -87,8 +85,8 @@ export const Options = ({
 
       <SC.OptionList isopen={String(isOpen)}>
         <OptionItem
-          key="all"
-          option={{ id: 99999, name: 'all' }}
+          key="reset"
+          option={{ id: 99999, name: 'reset' }}
           activeItem={activeItem}
           onClick={onReset}
           smallFirstLetterInOption={smallFirstLetterInOption}

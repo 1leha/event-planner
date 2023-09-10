@@ -29,7 +29,6 @@ export const EditEvent = () => {
     image,
     priority,
   };
-  console.log('location', location);
 
   return (
     <div>
