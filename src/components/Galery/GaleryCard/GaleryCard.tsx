@@ -2,7 +2,7 @@ import { Button } from 'components/common/Button';
 import * as SC from './GaleryCard.styled';
 import { useMediaQuery } from '@yamada-ui/use-media-query';
 import { breakPoint } from 'settings/breakpoints';
-import { useNavigate, useParams } from 'react-router';
+import { useLocation, useNavigate, useParams } from 'react-router';
 import {
   useDeleteEventMutation,
   useGetEventbyIdQuery,
@@ -12,6 +12,7 @@ import { format } from 'date-fns';
 export const GaleryCard = () => {
   const { eventId } = useParams();
   const navigate = useNavigate();
+  const { state } = useLocation();
 
   const { data, isError, isLoading, isSuccess } = useGetEventbyIdQuery(
     String(eventId)
@@ -25,7 +26,7 @@ export const GaleryCard = () => {
 
   const deleteEventHandler = () => {
     deleteEvent(eventId);
-    navigate('/', { replace: true });
+    navigate(state.from, { replace: true });
   };
 
   const editEventHandler = () => {
