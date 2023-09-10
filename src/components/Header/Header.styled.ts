@@ -1,3 +1,4 @@
+import { breakPoint } from 'settings/breakpoints';
 import { styled } from 'styled-components';
 
 export const Header = styled.header`
@@ -6,14 +7,14 @@ export const Header = styled.header`
   padding-top: ${p => p.theme.space[9]}px;
   padding-bottom: ${p => p.theme.space[9]}px;
 
-  @media screen and (min-width: 320px) {
+  @media screen and (min-width: ${breakPoint.mobile}px) {
     padding-left: ${p => p.theme.space[9]}px;
     padding-right: ${p => p.theme.space[9]}px;
     padding-top: ${p => p.theme.space[9]}px;
     padding-bottom: ${p => p.theme.space[9]}px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${breakPoint.tablet}px) {
     height: 92px;
 
     padding-left: ${p => p.theme.space[8]}px;
