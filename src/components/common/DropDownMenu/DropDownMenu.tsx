@@ -4,14 +4,7 @@ import { Options } from './Options';
 import { toUpperFirstLetter } from 'helpers/toUpperFirsLetter';
 import { useAppSearchParams } from 'helpers/hooks/useAppSearchParams';
 import { filterSearchParam } from 'helpers/filterSearchParam';
-
-interface IOption {
-  id: number;
-  name: string;
-  param?: string;
-  order?: string;
-  icon?: JSX.Element;
-}
+import { IOption } from 'helpers/interfaces/options';
 
 interface IProps {
   title: string;
@@ -75,14 +68,14 @@ export const DropDownMenu = ({
         category,
         page: 1,
         limit,
-        order: value?.order ? value?.order : '',
+        order: value?.order ? value.order : '',
         sortBy,
         [name]: value?.param
           ? value?.param
-            ? value?.param
+            ? value.param
             : ''
           : value?.name
-          ? value?.name
+          ? value.name
           : '',
       })
     );

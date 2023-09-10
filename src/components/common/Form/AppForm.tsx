@@ -152,14 +152,3 @@ export const AppForm = ({ id, inputValue }: IProps) => {
     </Formik>
   );
 };
-// const a = {
-//   createdAt: '2023-08-03T08:52:54.889Z',
-//   image: 'https://loremflickr.com/640/480/fashion',
-//   priority: 'priority 1',
-//   category: 'category 1',
-//   title: 'Associate',
-//   startedAt: '2014-11-04T08:02:15.947Z',
-//   location: 'Stephonborough',
-//   description: 'value-added',
-//   id: '1',
-// };
