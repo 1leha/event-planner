@@ -71,7 +71,13 @@ export const EventGrid = () => {
           ?.map((event: IEvents) => {
             return <EventCard key={event.id} eventData={event} />;
           })
-          .sort((a, b) => Number(b.key) - Number(a.key))}
+          .sort((a, b) => {
+            if (!!sortBy) {
+              return 0;
+            }
+
+            return Number(b.key) - Number(a.key);
+          })}
       </SC.EventsGrid>
       <PaginationBar itemsPerPage={Number(initSearch.limit)} />
     </Container>

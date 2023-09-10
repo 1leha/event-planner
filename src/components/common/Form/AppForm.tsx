@@ -26,7 +26,7 @@ interface IProps {
 const initialValues: TInputSchema = {
   title: '',
   description: '',
-  date: '2023-05-13',
+  date: '',
   time: '',
   location: '',
   category: '',
@@ -38,8 +38,6 @@ export const AppForm = ({ id, inputValue }: IProps) => {
   const { categoriesData } = useCategories();
   const categories = categoriesData.map(el => el.category);
   const navigate = useNavigate();
-
-  // const { currentTime, currentDate } = useDateTime();
 
   const [addEvent, { isLoading }] = useAddEventMutation();
   const [editEvent, { isLoading: isEditLoading }] = useEditEventMutation();
@@ -74,7 +72,7 @@ export const AppForm = ({ id, inputValue }: IProps) => {
     }
     actions.resetForm();
     actions.setSubmitting(false);
-    navigate('/', { replace: true });
+    navigate('/?page=1', { replace: true });
   };
 
   return (
@@ -84,7 +82,6 @@ export const AppForm = ({ id, inputValue }: IProps) => {
       validationSchema={formInputSchema}
     >
       {(formik: FormikProps<TInputSchema>) => {
-        // console.log(formik.errors);
         return (
           <>
             {isLoading && <div>Loading....</div>}

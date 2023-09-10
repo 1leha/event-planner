@@ -13,7 +13,7 @@ export const DateField = (props: any): JSX.Element => {
 
   useEffect(() => {
     if (!touched) {
-      setValue(value ?? currentDate);
+      setValue(Boolean(value) ? value : currentDate);
     }
   }, [currentDate, setValue, touched, value]);
 
