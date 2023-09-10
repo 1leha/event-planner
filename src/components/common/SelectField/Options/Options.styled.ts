@@ -38,7 +38,7 @@ export const OptionList = styled.ul<IProps>`
 
   list-style: none;
   width: 100%;
-  height: fit-content;
+  max-height: 136px;
 
   padding: ${p => p.theme.space[0]}px;
   margin: ${p => p.theme.space[0]}px;
