@@ -1,21 +1,12 @@
 import { BackLink } from 'components/common/BackLink';
 import { AppForm } from 'components/common/Form';
+import { useLocation } from 'react-router';
 
 export const CreateEvent = () => {
-  // const initialValues = {
-  //   title: 'New',
-  //   description: 'asdhdhdghdb',
-  //   date: '1121212',
-  //   time: '1213',
-  //   location: 'asasasasas',
-  //   category: 'ddddf',
-  //   image: '',
-  //   priority: 'vvddf',
-  // };
-
+  const { state } = useLocation();
   return (
     <div>
-      <BackLink to="/" />
+      <BackLink to={state.from} />
       <AppForm />
     </div>
   );
