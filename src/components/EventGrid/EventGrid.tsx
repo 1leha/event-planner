@@ -17,11 +17,11 @@ import { useTotalPages } from 'helpers/hooks/useTotalPages';
 
 export const EventGrid = () => {
   const [tablet] = useMediaQuery([`(max-width: ${breakPoint.desktop}px)`]);
-  // console.log('tablet', tablet);
 
   const initSearch = {
     limit: tablet ? '6' : '8',
   };
+
   const {
     search,
     category,
@@ -32,9 +32,7 @@ export const EventGrid = () => {
     setSearchParams,
   } = useAppSearchParams();
 
-  const { data, isLoading, refetch } = useGetEventsQuery(
-    searchParams.toString()
-  );
+  const { data, isLoading } = useGetEventsQuery(searchParams.toString());
 
   const { totalPages } = useTotalPages({
     category,
@@ -69,9 +67,11 @@ export const EventGrid = () => {
   return (
     <Container>
       <SC.EventsGrid>
-        {data?.map((event: IEvents) => {
-          return <EventCard key={event.id} eventData={event} />;
-        })}
+        {data
+          ?.map((event: IEvents) => {
+            return <EventCard key={event.id} eventData={event} />;
+          })
+          .sort((a, b) => Number(b.key) - Number(a.key))}
       </SC.EventsGrid>
       <PaginationBar itemsPerPage={Number(initSearch.limit)} />
     </Container>
