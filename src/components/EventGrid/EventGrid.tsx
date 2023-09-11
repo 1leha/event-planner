@@ -28,7 +28,7 @@ export const EventGrid = () => {
     setSearchParams,
   } = useAppSearchParams();
 
-  const { data, isLoading } = useGetEventsQuery(searchParams.toString());
+  const { data } = useGetEventsQuery(searchParams.toString());
 
   const { totalPages } = useTotalPages({
     category,
@@ -36,7 +36,7 @@ export const EventGrid = () => {
     itemsPerPage: Number(initSearch.limit),
   });
 
-  const currentPage = totalPages < Number(page) ? totalPages : page;
+  const currentPage = totalPages < Number(page) ? 1 : page;
 
   useEffect(() => {
     setSearchParams(
