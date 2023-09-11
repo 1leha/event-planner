@@ -16,10 +16,8 @@ export const useTotalPages = ({ category, itemsPerPage, search }: IArg) => {
     refetch,
     isLoading,
   } = useGetEventsLengthQuery(params);
-  //   console.log('eventsLength', eventsLength);
 
   const totalPages = Math.ceil(Number(eventsLength) / itemsPerPage);
-  //   console.log('totalPages', totalPages);
 
   return { eventsLength, refetch, isLoading, totalPages };
 };

@@ -1,5 +1,6 @@
 import { breakPoint } from 'settings/breakpoints';
 import { styled } from 'styled-components';
+
 export const EventsGrid = styled.ul`
   display: grid;
   grid-template-columns: 1fr;
@@ -8,9 +9,6 @@ export const EventsGrid = styled.ul`
 
   padding: 0;
   margin: 0;
-
-  /* @media screen and (max-width: ${breakPoint.mobile}px) {
-  } */
 
   @media screen and (min-width: ${breakPoint.tablet}px) {
     grid-template-columns: repeat(2, 1fr);

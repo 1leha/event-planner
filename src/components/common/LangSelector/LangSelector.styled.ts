@@ -77,8 +77,4 @@ export const IconButton = styled.button<IIconButtonUI>`
   border: none;
 
   border-radius: ${p => p.theme.radii.round};
-
-  /* &:hover {
-    color: ${p => p.theme.colors.hover};
-  } */
 `;

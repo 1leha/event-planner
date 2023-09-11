@@ -40,7 +40,7 @@ export const AppForm = ({ id, inputValue }: IProps) => {
   const navigate = useNavigate();
 
   const [addEvent, { isLoading }] = useAddEventMutation();
-  const [editEvent, { isLoading: isEditLoading }] = useEditEventMutation();
+  const [editEvent] = useEditEventMutation();
 
   const handlerSubmit = (formValues: TInputSchema, actions: any) => {
     const {

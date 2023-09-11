@@ -1,5 +1,4 @@
-import React, { ReactNode, useEffect, useState } from 'react';
-import { useGetEventsLengthQuery } from 'redux/events/events.api';
+import React, { ReactNode, useEffect } from 'react';
 import * as SC from './PaginationBar.styled';
 import { SVG } from 'img';
 import { useAppSearchParams } from 'helpers/hooks/useAppSearchParams';
@@ -44,10 +43,7 @@ export const PaginationBar = ({ itemsPerPage }: IProps) => {
     totalPages,
   ]);
 
-  const onChange = (current: any, pageSize: any): void => {
-    // console.log('onChange:current=', current);
-    // console.log('onChange:pageSize=', pageSize);
-
+  const onChange = (current: unknown): void => {
     setSearchParams(
       filterSearchParam({
         search,

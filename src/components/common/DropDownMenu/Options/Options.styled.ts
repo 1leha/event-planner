@@ -8,13 +8,11 @@ interface IProps {
 
 export const Wrapper = styled.div<IProps>`
   width: 100%;
-  /* max-height: 350px; */
   min-width: 158px;
 
   position: absolute;
   top: -1px;
   ${p => (p.isleftconer === 'true' ? 'left:0px;' : 'right:0px;')}
-  /* left: 0; */
 
   background-color: ${p => p.theme.colors.white};
   border-radius: ${p => p.theme.radii.textField};

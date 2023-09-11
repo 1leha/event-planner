@@ -4,7 +4,7 @@ import { SVG } from 'img';
 import { useGetCategoriesQuery } from 'redux/events/events.api';
 
 export const CategoryDropDown = () => {
-  const { data, isError, isLoading } = useGetCategoriesQuery();
+  const { data } = useGetCategoriesQuery();
 
   return (
     <DropDownMenu

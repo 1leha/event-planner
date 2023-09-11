@@ -15,7 +15,6 @@ export interface ISelectUI extends InputHTMLAttributes<HTMLInputElement> {
   setDefaultValue?: boolean;
 
   options: string[] | [];
-  // [key: string]: any;
 }
 
 export interface ILangUI extends InputHTMLAttributes<HTMLInputElement> {
@@ -26,8 +25,6 @@ export interface ILangUI extends InputHTMLAttributes<HTMLInputElement> {
 export interface IIconButtonUI extends InputHTMLAttributes<HTMLButtonElement> {
   error?: boolean | string;
   isopen?: boolean | string;
-
-  // [key: string]: any;
 }
 
 export interface IMultilinedUI

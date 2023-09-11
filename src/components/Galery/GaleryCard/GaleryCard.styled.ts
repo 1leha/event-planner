@@ -18,9 +18,6 @@ export const Card = styled.div`
 
   box-sizing: border-box;
 
-  /* @media screen and (max-width: ${breakPoint.mobile}px) {
-  } */
-
   @media screen and (min-width: ${breakPoint.tablet}px) {
     width: 688px;
   }
@@ -38,9 +35,6 @@ export const CardWrapper = styled.div`
   padding-bottom: ${p => p.theme.space[13]}px;
 
   box-sizing: border-box;
-
-  /* @media screen and (max-width: ${breakPoint.mobile}px) {
-  } */
 
   @media screen and (min-width: ${breakPoint.tablet}px) {
     padding-left: ${p => p.theme.space[9]}px;
@@ -90,7 +84,6 @@ export const Image = styled.img`
 
 export const Description = styled.div`
   margin: 0;
-  /* height: 80px; */
 
   margin-bottom: ${p => p.theme.space[9]}px;
 
@@ -151,9 +144,6 @@ export const ButtonWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: ${p => p.theme.space[9]}px;
-
-  /* @media screen and (max-width: ${breakPoint.mobile}px) {
-  } */
 
   @media screen and (min-width: ${breakPoint.tablet}px) {
     justify-content: flex-end;
