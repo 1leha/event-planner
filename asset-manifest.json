@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/event-planner/static/css/main.63a63dab.css",
-    "main.js": "/event-planner/static/js/main.788bfcad.js",
+    "main.js": "/event-planner/static/js/main.0875b72d.js",
     "static/js/787.3544c18c.chunk.js": "/event-planner/static/js/787.3544c18c.chunk.js",
     "static/media/bg.svg": "/event-planner/static/media/bg.8780fd90ac1b75d38f109e81468995bc.svg",
     "static/media/logo.svg": "/event-planner/static/media/logo.963bc34a67716b48020d809fb3bfa738.svg",
@@ -19,11 +19,11 @@
     "static/media/chevron-text-field.svg": "/event-planner/static/media/chevron-text-field.bc2bf716bdd8fb92a6ecff69f784c7db.svg",
     "static/media/chevron-text-field_colored.svg": "/event-planner/static/media/chevron-text-field_colored.1c1132fc94c4de1433a620d54bc31f0a.svg",
     "main.63a63dab.css.map": "/event-planner/static/css/main.63a63dab.css.map",
-    "main.788bfcad.js.map": "/event-planner/static/js/main.788bfcad.js.map",
+    "main.0875b72d.js.map": "/event-planner/static/js/main.0875b72d.js.map",
     "787.3544c18c.chunk.js.map": "/event-planner/static/js/787.3544c18c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.63a63dab.css",
-    "static/js/main.788bfcad.js"
+    "static/js/main.0875b72d.js"
   ]
 }
