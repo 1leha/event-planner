@@ -2,8 +2,8 @@ import { Logo } from 'components/common/Logo';
 import * as SC from './HeaderStandart.styled';
 import { Box } from 'components/common/Box';
 import { SearchField } from 'components/SearchField';
-import { LangSelector } from 'components/common/LangSelector';
-import { appLang } from 'settings/language';
+// import { LangSelector } from 'components/common/LangSelector';
+// import { appLang } from 'settings/language';
 
 export const HeaderStandart = () => {
   return (
@@ -19,7 +19,7 @@ export const HeaderStandart = () => {
         }}
       >
         <SearchField />
-        <LangSelector options={appLang} readOnly type="text" name="lang" />
+        {/* <LangSelector options={appLang} readOnly type="text" name="lang" /> */}
       </Box>
     </SC.Wrapper>
   );

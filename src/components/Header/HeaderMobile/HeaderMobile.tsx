@@ -2,8 +2,8 @@ import { Logo } from 'components/common/Logo';
 import * as SC from './HeaderMobile.styled';
 import { Box } from 'components/common/Box';
 import { SearchField } from 'components/SearchField';
-import { LangSelector } from 'components/common/LangSelector';
-import { appLang } from 'settings/language';
+// import { LangSelector } from 'components/common/LangSelector';
+// import { appLang } from 'settings/language';
 
 export const HeaderMobile = () => {
   return (
@@ -17,7 +17,7 @@ export const HeaderMobile = () => {
         }}
       >
         <Logo />
-        <LangSelector options={appLang} readOnly type="text" name="lang" />
+        {/* <LangSelector options={appLang} readOnly type="text" name="lang" /> */}
       </Box>
 
       <SearchField />
