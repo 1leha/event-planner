@@ -28,8 +28,12 @@ export const EventCard = ({ eventData }: ICard) => {
   const eventDate = format(new Date(startedAt), 'dd.MM');
   const eventTime = format(new Date(startedAt), 'HH:mm');
 
+  const onClickHandler = () => {
+    navigate(id, { state: { from: path } });
+  };
+
   return (
-    <SC.Card>
+    <SC.Card onClick={onClickHandler}>
       <SC.AdditionalInfoWrapper>
         <SC.AdditionalInfoItem>{category}</SC.AdditionalInfoItem>
         <SC.AdditionalInfoItem priority={priority}>
@@ -60,7 +64,7 @@ export const EventCard = ({ eventData }: ICard) => {
               size="m"
               variant="primary"
               width={114}
-              onClick={() => navigate(id, { state: { from: path } })}
+              onClick={onClickHandler}
             >
               More Info
             </Button>
