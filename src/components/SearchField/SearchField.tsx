@@ -4,6 +4,7 @@ import { useAppDispatch } from 'redux/store';
 import { inputFilterReducer } from 'redux/filter/filter.slice';
 import { debounce } from 'ts-debounce';
 import { useAppSearchParams } from 'helpers/hooks/useAppSearchParams';
+import { filterSearchParam } from 'helpers/filterSearchParam';
 
 export const SearchField = () => {
   const dispatch = useAppDispatch();
@@ -13,23 +14,26 @@ export const SearchField = () => {
 
   const handleSearchParamsChange = useMemo(() => {
     return debounce(
-      (value: string) =>
-        setSearchParams({
-          category,
-          page,
-          limit,
-          order,
-          sortBy,
-          search: value,
-        }),
-      300,
+      (value: string) => {
+        return setSearchParams(
+          filterSearchParam({
+            category,
+            page,
+            limit,
+            order,
+            sortBy,
+            search: value,
+          })
+        );
+      },
+      500,
       { isImmediate: true, maxWait: 500 }
     );
   }, [setSearchParams, category, page, limit, order, sortBy]);
 
   const filterHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    handleSearchParamsChange(e.target.value.trim());
     dispatch(inputFilterReducer(e.target.value));
-    handleSearchParamsChange(e.target.value.replace(/\\/g, '\\\\').trim());
   };
 
   return (
