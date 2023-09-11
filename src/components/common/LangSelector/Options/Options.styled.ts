@@ -56,10 +56,6 @@ export const OptionItem = styled.li`
 
   color: ${p => p.theme.colors.text};
 
-  &:not(:last-child) {
-    /* margin-bottom: ${p => p.theme.space[3]}px; */
-  }
-
   &::after {
     content: '';
     position: absolute;

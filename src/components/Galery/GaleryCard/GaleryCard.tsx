@@ -14,10 +14,8 @@ export const GaleryCard = () => {
   const navigate = useNavigate();
   const { state } = useLocation();
 
-  const { data, isError, isLoading, isSuccess } = useGetEventbyIdQuery(
-    String(eventId)
-  );
-  const [deleteEvent, { isLoading: isDeleting }] = useDeleteEventMutation();
+  const { data } = useGetEventbyIdQuery(String(eventId));
+  const [deleteEvent] = useDeleteEventMutation();
 
   const [mobile] = useMediaQuery([`(max-width: ${breakPoint.tablet}px)`]);
 

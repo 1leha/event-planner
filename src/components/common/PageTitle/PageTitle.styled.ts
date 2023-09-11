@@ -11,10 +11,6 @@ export const Title = styled.div`
   font-weight: ${p => p.theme.fontWeights.semiBold};
   line-height: normal;
 
-  /* @media screen and (max-width: ${breakPoint.mobile}px) {
-
-  } */
-
   @media screen and (min-width: ${breakPoint.tablet}px) {
   }
 

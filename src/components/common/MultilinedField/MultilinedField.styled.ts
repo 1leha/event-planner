@@ -10,9 +10,6 @@ export const Wrapper = styled.div<IInputUI>`
 
   margin-bottom: ${p => p.theme.space[0]}px;
 
-  /* @media screen and (min-width: ${breakPoint.mobile}px) {
-  } */
-
   @media screen and (min-width: ${breakPoint.tablet}px) {
     width: 308px;
   }

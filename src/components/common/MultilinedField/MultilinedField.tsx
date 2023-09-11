@@ -5,16 +5,8 @@ import { useField } from 'formik';
 export const MultilinedField = (props: any): JSX.Element => {
   const [field, meta, helpers] = useField(props);
 
-  // console.log('field', field);
-  // console.log('meta', meta);
-
-  // const { value } = field;
   const { error } = meta;
   const { setValue } = helpers;
-
-  // console.log('error', error);
-
-  // console.log('value', value);
 
   return (
     <SC.Wrapper>

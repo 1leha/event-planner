@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${p => p.theme.space[9]}px;
-  /* align-items: center; */
 
   margin-bottom: ${p => p.theme.space[13]}px;
 
@@ -21,7 +20,6 @@ export const Title = styled.h2`
 
   color: ${p => p.theme.colors.text};
   font-size: ${p => p.theme.fontSizes.xxxl};
-  /* font-size: 32px; */
   font-style: normal;
   font-weight: ${p => p.theme.fontWeights.semiBold};
   line-height: normal;

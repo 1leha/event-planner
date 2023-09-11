@@ -41,13 +41,8 @@ export const PaginationBar = styled(Pagination)`
 
   box-sizing: border-box;
 
-  @media screen and (min-width: ${breakPoint.tablet}px) {
-    /* gap: ${p => p.theme.space[13]}px; */
-  }
-
   @media screen and (min-width: ${breakPoint.desktop}px) {
     width: 588px;
-    /* gap: ${p => p.theme.space[7]}px; */
   }
 `;
 

@@ -10,8 +10,6 @@ export const Container = styled.div`
 
   min-width: 220px;
 
-  /* background-color: aqua; */
-
   @media screen and (min-width: ${breakPoint.mobile}px) {
     max-width: 271px;
 

@@ -107,9 +107,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: flex-start;
 
-  /* @media screen and (min-width: ${breakPoint.mobile}px) {
-  } */
-
   @media screen and (min-width: ${breakPoint.tablet}px) {
     width: 308px;
   }

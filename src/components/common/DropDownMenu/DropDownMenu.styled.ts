@@ -27,7 +27,6 @@ export const InputWrapper = styled.div`
   gap: ${p => p.theme.space[6]}px;
   justify-content: flex-start;
   align-items: center;
-  /* width: 100%; */
 
   padding-left: ${p => p.theme.space[6]}px;
   padding-right: ${p => p.theme.space[6]}px;

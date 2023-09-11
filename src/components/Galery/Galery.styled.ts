@@ -6,8 +6,6 @@ export const GaleryWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* @media screen and (max-width: ${breakPoint.mobile}px) {
-  } */
 
   @media screen and (min-width: ${breakPoint.tablet}px) {
   }
@@ -19,8 +17,6 @@ export const GaleryWrapper = styled.div`
 export const Card = styled.div`
   background-color: red;
   width: 300px;
-  /* @media screen and (max-width: ${breakPoint.mobile}px) {
-  } */
 
   @media screen and (min-width: ${breakPoint.tablet}px) {
   }

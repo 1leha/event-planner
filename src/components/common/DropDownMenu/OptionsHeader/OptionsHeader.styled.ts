@@ -6,8 +6,6 @@ interface IProps {
 }
 
 export const HeaderWrapper = styled.div<IProps>`
-  /* position: fixed; */
-
   display: flex;
   align-items: center;
   justify-content: ${p => (p.revers === 'true' ? 'flex-end' : 'space-between')};
